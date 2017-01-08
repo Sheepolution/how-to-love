@@ -2,7 +2,7 @@
 # How to (make games with) LÖVE
 How to (make games  with) LÖVE is a tutorial series made by me, Sheepolution. I decided to put it on Github so that others can contribute by fixing grammar-errors, code-errors, or even add whole new chapters.
 
-The tutorial is hosted on [sheepolution.com/learn/book](www.sheepolution.com/learn/book).
+The tutorial is hosted on [sheepolution.com/learn/book](http://www.sheepolution.com/learn/book/contents).
 
 ## Writing a chapter
 Every chapter is assumed to be written by Sheepolution. If you write a chapter and want credit for it put the following at the top of your chapter:
