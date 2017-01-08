@@ -27,6 +27,12 @@ ___
 	* DON'T: Library x is the best!
 	* DO: I prefer library x
 
+* Preferably don't use library.
+	* For example, don't use an animation library. Animation can teach a lot about quads and good use of tables.
+	* You can always end the chapter with recommended libraries regarding the subject.
+
+* End the chapter with a short recap (TL;DR).
+
 [Parsedown](http://parsedown.org/tests/) is used to convert markdown to html.
 
 
