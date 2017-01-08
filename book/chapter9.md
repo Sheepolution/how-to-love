@@ -56,7 +56,7 @@ print(test)
 --Output: nil
 ```
 
-``test`` is ``nil``, because we print it outside of it's scope.
+``test`` is ``nil``, because we print it outside of its scope.
 
 Parameters of functions are like local variables. Only existing inside the function.
 
