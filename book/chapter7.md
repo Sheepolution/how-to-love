@@ -1,6 +1,6 @@
 #Chapter 7 - Tables and for-loops
 ##Tables
-Tables basically lists in which we can store values.
+Tables are basically lists in which we can store values.
 
 You create a table with curly brackets ({ }):
 ```lua
@@ -123,7 +123,7 @@ ___
 
 ##Editing tables
 
-But what if we add or remove a value from a table? We would have to change the 3 into another number. For that we use ``#fruits``. With the #-sign, we can get the length of a table.
+But what if we add or remove a value from a table? We would have to change the 3 into another number. For that we use ``#fruits``. With the #-sign, we can get the length of a table. The length of a table refers to the number of things in that table. That length would be ```3``` in our case, since we have 3 entries: ```apple```, ```banana```, and ```pear``` in our ```fruits``` table.
 
 ```lua
 function love.load()
@@ -225,7 +225,7 @@ function love.load()
 end
 ```
 
-This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables ``i`` tells us the position of the table, ``v`` is the value of that position in the table. It's basically a shorthand for ``fruits[i]``. Let's use ``ipairs`` for drawing our tables.
+This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables ``i`` tells us the position of the table, ``v`` is the value of that position in the table. It's basically a shorthand for ``fruits[i]``. For exampke, in the first iteration ```i``` would be ```1``` and ```v``` would be ```"apple"```. In the second, the values for the variables ```i``` and ```v``` would be ```2``` and ```"pear:``` respectively. Let's use ``ipairs`` for drawing our tables!
 
 ```lua
 function love.draw()
