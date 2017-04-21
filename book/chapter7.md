@@ -1,6 +1,6 @@
 #Chapter 7 - Tables and for-loops
 ##Tables
-Tables basically lists in which we can store values.
+Tables are basically lists in which we can store values.
 
 You create a table with curly brackets ({ }):
 ```lua
@@ -17,7 +17,7 @@ end
 
 
 function love.draw()
-	
+
 end
 ```
 
@@ -123,7 +123,7 @@ ___
 
 ##Editing tables
 
-But what if we add or remove a value from a table? We would have to change the 3 into another number. For that we use ``#fruits``. With the #-sign, we can get the length of a table.
+But what if we add or remove a value from a table? We would have to change the 3 into another number. For that we use ``#fruits``. With the #-sign, we can get the length of a table. The length of a table refers to the number of things in that table. That length would be ```3``` in our case, since we have 3 entries: ```apple```, ```banana```, and ```pear``` in our ```fruits``` table.
 
 ```lua
 function love.load()
@@ -220,12 +220,12 @@ function love.load()
 	end
 	--Output:
 	--1, "tomato"
-	--2, "pear" 
+	--2, "pear"
 	--3, "pineapple"
 end
 ```
 
-This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables ``i`` tells us the position of the table, ``v`` is the value of that position in the table. It's basically a shorthand for ``fruits[i]``. Let's use ``ipairs`` for drawing our tables.
+This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables ``i`` tells us the position of the table, ``v`` is the value of that position in the table. It's basically a shorthand for ``fruits[i]``. For example, in the first iteration the values for the variables  ```i``` would be ```1``` and ```v``` would be ```"apple"```. In the second iteration, ```i``` and ```v``` would be ```2``` and ```"pear"``` respectively. Let's use ``ipairs`` for drawing our tables.
 
 ```lua
 function love.draw()
@@ -239,4 +239,4 @@ end
 ___
 
 ##TL;DR
-Tables are lists in which we can store values. We store these values when creating the table, with ``table.insert``, or with ``table_name[1] = "some_value"``. We can get the length of the table with ``#table_name``. With for-loops we can repeat a piece of code a number of times. We can also use for-loops to iterate through tables. 
+Tables are lists in which we can store values. We store these values when creating the table, with ``table.insert``, or with ``table_name[1] = "some_value"``. We can get the length of the table with ``#table_name``. With for-loops we can repeat a piece of code a number of times. We can also use for-loops to iterate through tables.

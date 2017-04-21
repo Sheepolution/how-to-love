@@ -37,7 +37,7 @@ function love.load()
 
 	--The first argument is a function
 	--The second argument is the time it takes to call the function
-	tick.delay(function startDrawingRectangle()	drawRectangle = true end ,	2)
+	tick.delay(function () drawRectangle = true end ,	2)
 end
 
 

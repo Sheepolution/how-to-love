@@ -60,7 +60,7 @@ By default, all the scaling and rotating is based on the top-left of the image.
 
 This is based on the *origin* of the image. If we want to scale the image from the center, we'll have to put the origin in the center of the image.
 
-``love.graphics.draw(myImage, 100, 100, 0, 2, 2, 50, 39)``
+``love.graphics.draw(myImage, 100, 100, 0, 2, 2, 39, 50)``
 
 ![](/images/book/12/origin2.png)
 
@@ -94,7 +94,7 @@ function love.load()
 end
 
 function love.draw()
-	love.graphics.newImage("sheep.png", 100, 100, 0, 2, 2, width/2, height/2)
+	love.graphics.draw("sheep.png", 100, 100, 0, 2, 2, width/2, height/2)
 end
 ```
 
