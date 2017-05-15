@@ -40,7 +40,7 @@ A new window opens. Click on the tab ***View***. In ***Advanced options***, make
 
 ![](/images/book/15/folder_options.png)
 
-Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip), and unzip all the files in a folder.
+Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip?dl=1), and unzip all the files in a folder.
 
 Now move your .love file on top of ``create_exe.bat``. This creates a ``.exe`` file in the game folder.
 
@@ -53,4 +53,4 @@ ___
 ##TL;DR
 With [conf.lua](https://love2d.org/wiki/Config_Files) you can configure things about your game like title and icon.
 
-Select all the files in the folder of your game, put them in a zip. Change the file's extension from ``.zip`` to ``.love``. Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip), and unzip all the files in a folder. Move your ``.love`` on top of ``create_exe.bat``. Select all the files in the folder ``game`` and put them in a zip. People will have to unzip all the files in a folder and open the ``.exe`` to play your game. 
+Select all the files in the folder of your game, put them in a zip. Change the file's extension from ``.zip`` to ``.love``. Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip?dl=1), and unzip all the files in a folder. Move your ``.love`` on top of ``create_exe.bat``. Select all the files in the folder ``game`` and put them in a zip. People will have to unzip all the files in a folder and open the ``.exe`` to play your game. 
