@@ -6,14 +6,11 @@ Let's make an animated image.
 
 First, you'll need some images:
 
+![](/images/book/17/jump1.png), ![](/images/book/17/jump2.png), ![](/images/book/17/jump3.png), ![](/images/book/17/jump4.png) and ![](/images/book/17/jump5.png)
 
-
-You can also download them as a zip: http://imgur.com/a/iePZo/zip
-But be sure to rename the images to jump1.png, jump2.png, etc.
-
+You can also download them as a zip [here](https://www.dropbox.com/s/22nl1ybqhvan2j3/jump.zip?dl=1)
 
 Load the images and put them in a table.
-
 
 ```lua
 function love.load()
@@ -270,19 +267,19 @@ You might notice that we have an extra, empty quad. This isn't really a big deal
 ```lua
 maxFrames = 5
 for i=0,1 do
-	--I changed i to j in the inner for-loop
 	for j=0,2 do
-		--Meaning you also need to change it here
 		table.insert(frames, love.graphics.newQuad(j * frame_width, i * frame_height, frame_width, frame_height, width, height))
 		if #frames == maxFrames then
 			break
 		end 
 	end
+	print("I don't break!")
 end
 ```
 
-With ``break`` we can end a for-loop. This will prevent it from adding that last quad. Note that ``break`` only stops the loop it's used in. So in our case the loop ``for i=0,1`` would still continue. It could be fixed by adding the same if-statement in our outer-loop, but it doesn't matter since it's already on its last iteration.
+With ``break`` we can end a for-loop. This will prevent it from adding that last quad.
 
+Note how *"I don't break"* gets printed. This is because ``break`` only breaks the loop you use it in, the outer loop still continues. It could be fixed by adding the same if-statement in our outer-loop, but in our case it doesn't matter since the loop at that point is already on its last iteration.
 
 ##Bleeding
 
@@ -299,11 +296,13 @@ Our first frame could end up like this:
 It's kind of technical why this happens, but the fact is that it does happen. Luckily, we can solve this issue by adding a 1 pixel border around our frame. 
 Either of the same color as the actualy border, or with transparency.
 
-![](/image/book/17/bleeding_fix.png)
+![](/images/book/17/bleeding_fix.png)
 
 And then we don't include that border inside the quad.
 
 I added a border to our jumping character. Instead of transparent I made it purple so that we can see if we're not accidentally drawing part of the border.
+
+![](/images/book/17/jump_3.png)
 
 Let's do this step by step.
 
@@ -322,9 +321,9 @@ newQuad(1 + j * frame_width, 1 + i * frame_height, frame_width, frame_height, wi
 
 Almost. We're missing something.
 
-![](/image/book/17/almost.png)
+![](/images/book/17/almost.png)
 
-The blue line is our quad. As you can see, the quad is 2 pixels to the left of where it's supposed to be.
+The blue line is our quad. As you can see, the quad is 2 pixels to the left of where it's supposed to be. So let's add 2 to how much we move each iteration.
 
 ```lua
 newQuad(1 + j * (frame_width + 2), 1 + i * (frame_height + 2), frame_width, frame_height, width, height)
@@ -332,7 +331,7 @@ newQuad(1 + j * (frame_width + 2), 1 + i * (frame_height + 2), frame_width, fram
 
 And now our quads are in the correct position. Here's an image visualizing how we position the quad.
 
-![](/image/book/17/whatisgoingon.png)
+![](/images/book/17/whatisgoingon.png)
 
 ##TL;DR
 

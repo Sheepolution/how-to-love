@@ -277,7 +277,14 @@ function love.load()
 
 	for i=0,1 do
 		for i=0,2 do
-			table.insert(quads, 1 + j * (width + 2), 1 + i * (height + 2), width, height, image_width, image_height)
+			--The only reason this code is split up in multiple lines
+			--is so that it fits the page
+			table.insert(quads,
+				love.graphics.newQuad(
+					1 + j * (width + 2),
+					1 + i * (height + 2),
+					width, height,
+					image_width, image_height))
 		end
 	end
 
@@ -358,7 +365,12 @@ function love.load()
 
 	for i=0,1 do
 		for i=0,2 do
-			table.insert(quads, 1 + j * (width + 2), 1 + i * (height + 2), width, height, image_width, image_height)
+			table.insert(quads,
+				love.graphics.newQuad(
+					1 + j * (width + 2),
+					1 + i * (height + 2),
+					width, height,
+					image_width, image_height))
 		end
 	end
 
@@ -384,20 +396,27 @@ end
 
 The ``tile_x`` and ``tile_y`` is the player's position on our tilemap. This number will be multiplied by the tile width and height when drawn. But first let's make it move. Instead of smooth movement we will make it jump to its next position, so we won't be needing ``dt`` for the movement. This also means that we don't want to know if the movement keys are *down*, but if they are *pressed*. For this we use the ``love.keypressed`` event.
 
+First we create local x and y variable. Next we add or subtract 1 to this variable based on the key that was pressed, and finally we assign this value to the player's position.
+
 
 ```lua
 function love.keypressed(key)
 	local x = player.tile_x
 	local y = player.tile_y
+
 	if key == "left" then
-		player.tile_x = x - 1
+		x = x - 1
 	elseif key == "right" then
-		player.tile_x = x + 1
+		x = x + 1
 	elseif key == "up" then
-		player.tile_y = y - 1
+		y = y - 1
 	elseif key == "down" then
-		player.tile_y = y + 1
+		y = y + 1
 	end
+	
+	x = player.tile_x
+	y = player.tile_y 
+
 end
 ```
 
@@ -410,7 +429,7 @@ function love.draw()
 		for j,tile in ipairs(row) do
 	   		if tile ~= 0 then
 	   			--Draw the image with the correct quad
-	   			love.graphics.draw(image, quads[v], j * width, i * height)
+	   			love.graphics.draw(image, quads[tile], j * width, i * height)
 	   		end	
    		end
    	end
@@ -422,7 +441,7 @@ end
 
 When you run the game you should be able to walk around with your player. But the problem is that he can walk through walls. Let's fix this by checking if the position he wants to go to is a wall.
 
-First make a function called ``isEmpty``. Inside we return wether the value on the coordinates does equals 0.
+First make a function called ``isEmpty``. Inside we return wether the value on the coordinates equals 0.
 
 ```lua
 function isEmpty(x, y)
@@ -438,22 +457,20 @@ Now that we have our function we can check if where we want to go is an empty sp
 function love.keypressed(key)
 	local x = player.tile_x
 	local y = player.tile_y
+
 	if key == "left" then
-		if isEmpty(x - 1, y) then
-			player.tile_x = x - 1
-		end
+		x = x - 1
 	elseif key == "right" then
-		if isEmpty(x + 1, y) then
-			player.tile_x = x + 1
-		end
+		x = x + 1
 	elseif key == "up" then
-		if isEmpty(x, y - 1) then
-			player.tile_y = y - 1
-		end
+		y = y - 1
 	elseif key == "down" then
-		if isEmpty(x, y + 1) then
-			player.tile_y = y + 1
-		end
+		y = y + 1
+	end
+
+	if isEmpty(x, y) then
+		player.tile_x = x
+		player.tile_y = y
 	end
 end
 ```

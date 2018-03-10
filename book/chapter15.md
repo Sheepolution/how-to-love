@@ -11,8 +11,8 @@ Create a new file called conf.lua, and put in the following code
 
 ```lua
 function love.conf(t)
-	t.title = "Panda Shooter!"
-	t.icon = "panda.png"
+	t.window.title = "Panda Shooter!"
+	t.window.icon = "panda.png"
 end
 ```
 

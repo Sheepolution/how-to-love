@@ -52,5 +52,11 @@
 		<li>
 			<a href="/learn/book/16">Chapter 16 - Angles</a>
 		</li>
+		<li>
+			<a href="/learn/book/17">Chapter 17 - Animation</a>
+		</li>
+		<li>
+			<a href="/learn/book/18">Chapter 18 - Tiles</a>
+		</li>
 	</ul>
 </div>
