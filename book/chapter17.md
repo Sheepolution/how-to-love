@@ -1,6 +1,6 @@
-#Chapter 17 - Animation
+# Chapter 17 - Animation
 
-##Frames
+## Frames
 
 Let's make an animated image.
 
@@ -24,7 +24,7 @@ function love.load()
 end
 ```
 
-Hold on, we can do this much more efficient.
+Hold on, we can do this much more efficiently.
 
 ```lua
 function love.load()
@@ -60,7 +60,7 @@ function love.update(dt)
 end
 ```
 
-Now we have the variable ``currentFrame`` which increases by 1 every second, let's use this variable to draw the frames.
+Now we have the variable `currentFrame` which increases by 1 every second, let's use this variable to draw the frames.
 
 ```lua
 function love.draw()
@@ -70,9 +70,9 @@ end
 
 If you run the game you'll get an error: *bad argument #1 to 'draw' (Drawable expected, got nil)*
 
-This is because our variable ``currentFrame`` has decimals. After the first update ``currentFrame`` is something like 1.016, and while our table has something on position 1 and 2, there is nothing on position 1.016.
+This is because our variable `currentFrame` has decimals. After the first update `currentFrame` is something like 1.016, and while our table has something on position 1 and 2, there is nothing on position 1.016.
 
-To solve this we round the number down with ``math.floor``. So 1.016 will become 1.
+To solve this we round the number down with `math.floor`. So 1.016 will become 1.
 
 ```lua
 function love.draw()
@@ -80,7 +80,7 @@ function love.draw()
 end
 ```
 
-Run the game and you'll see that our animation works, but you'll eventually get an error. This is because currentFrame became higher than (or equal to) 6. And we only have 5 frames. To solve this, we reset ``currentFrame`` if it gets higher than (or equal to) 6. And while we're at it, let's speed up our animation.
+Run the game and you'll see that our animation works, but you'll eventually get an error. This is because currentFrame became higher than (or equal to) 6. And we only have 5 frames. To solve this, we reset `currentFrame` if it gets higher than (or equal to) 6. And while we're at it, let's speed up our animation.
 
 ```lua
 function love.update(dt)
@@ -95,8 +95,9 @@ Look at him go!
 
 ![](/images/book/17/jump.gif)
 
+___
 
-##Quads
+## Quads
 
 So this works, but it's not very efficient. With large animations we're going to need a lot of images. What if we put all the frames into 1 image, and then draw part of the image. We can do this with quads.
 
@@ -104,7 +105,7 @@ First, download this image:
 
 ![](/images/book/17/jump.png)
 
-We'll remake the function ``love.load`` (you can keep ``love.update`` and ``love.draw`` the way it is).
+We'll remake the function `love.load` (you can keep `love.update` and `love.draw` the way it is).
 
 ```lua
 function love.load()
@@ -112,7 +113,7 @@ function love.load()
 end
 ```
 
-Imagine quads like a rectangle that we cut out of our image. We tell the game "We want this part of the image". We're going to make a quad of the first frame. You can make a quad with ``love.graphics.newQuad``[(wiki)](https://love2d.org/wiki/love.graphics.newQuad).
+Imagine quads like a rectangle that we cut out of our image. We tell the game "We want this part of the image". We're going to make a quad of the first frame. You can make a quad with `love.graphics.newQuad` [(wiki)](https://love2d.org/wiki/love.graphics.newQuad).
 
 The first arguments are the x and y position of our quad. Well since we want the first frame we take the upper-left corner of our image, so 0,0.
 
@@ -128,7 +129,7 @@ Again, quads are like cutting a piece of paper. Where we will eventually draw ou
 
 ![](/images/book/17/quad_position.png)
 
-Next 2 arguments are the width and height of our quad. The width of a frame in our image is 117 and the height is 233. The last 2 arguments are the width and height of the full image. We can get these with ``image:getWidth()`` and ``image:getHeight()``.
+Next 2 arguments are the width and height of our quad. The width of a frame in our image is 117 and the height is 233. The last 2 arguments are the width and height of the full image. We can get these with `image:getWidth()` and `image:getHeight()`.
 
 ```lua
 function love.load()
@@ -137,10 +138,12 @@ function love.load()
 	local frame_width = 117
 	local frame_height = 233
 	table.insert(frames, love.graphics.newQuad(0, 0, frame_width, frame_height, image:getWidth(), image:getHeight()))
+
+    currentFrame = 1
 end
 ```
 
-Now let's test our quad by drawing it. You draw a quad by passing it as second argument in ``love.graphics.draw``.
+Now let's test our quad by drawing it. You draw a quad by passing it as second argument in `love.graphics.draw`.
 
 ```lua
 function love.draw()
@@ -184,7 +187,6 @@ function love.load()
 		table.insert(frames, love.graphics.newQuad(i * frame_width, 0, frame_width, frame_height, width, height))
 	end
 
-	--Don't forget the currentFrame variable!
 	currentFrame = 1
 end
 ```
@@ -199,7 +201,9 @@ function love.draw()
 end
 ```
 
-##Multiple rows
+___
+
+## Multiple rows
 
 So we can now turn a row of frames into an animation, but what if we have multiple rows?
 
@@ -209,7 +213,7 @@ Easy, we just have to repeat the same thing with a different y value.
 
 ```lua
 function love.load()
-	image = love.graphics.newImage("jump2.png")
+	image = love.graphics.newImage("jump_2.png")
 	local width = image:getWidth()
 	local height = image:getHeight() 
 
@@ -218,11 +222,11 @@ function love.load()
 	local frame_width = 117
 	local frame_height = 233
 
-	for i=0,3 do
+	for i=0,2 do
 		table.insert(frames, love.graphics.newQuad(i * frame_width, 0, frame_width, frame_height, width, height))
 	end
 
-	for i=0,2 do
+	for i=0,1 do
 		table.insert(frames, love.graphics.newQuad(i * frame_width, frame_height, frame_width, frame_height, width, height))
 	end
 
@@ -238,7 +242,7 @@ Exactly! We're going to have to make a few changes though.
 
 ```lua
 function love.load()
-	image = love.graphics.newImage("jump2.png")
+	image = love.graphics.newImage("jump_2.png")
 	local width = image:getWidth()
 	local height = image:getHeight() 
 
@@ -262,7 +266,7 @@ end
 So in the first iteration of the outer for-loop, i equals 0, and j equals 0, then 1, then 2 and finally 3.
 In the second iteration, i equals 1, and j again equals 0, then 1, then 2 and finally 3.
 
-You might notice that we have an extra, empty quad. This isn't really a big deal, but we can do something like this to prevent it
+You might notice that we have an extra, empty quad. This isn't really a big deal since we only draw the first 5 quads, but we can do something like this to prevent it
 
 ```lua
 maxFrames = 5
@@ -277,11 +281,13 @@ for i=0,1 do
 end
 ```
 
-With ``break`` we can end a for-loop. This will prevent it from adding that last quad.
+With `break` we can end a for-loop. This will prevent it from adding that last quad.
 
-Note how *"I don't break"* gets printed. This is because ``break`` only breaks the loop you use it in, the outer loop still continues. It could be fixed by adding the same if-statement in our outer-loop, but in our case it doesn't matter since the loop at that point is already on its last iteration.
+Note how *"I don't break"* gets printed. This is because `break` only breaks the loop you use it in, the outer loop still continues. It could be fixed by adding the same if-statement in our outer-loop, but in our case it doesn't matter since the loop at that point is already on its last iteration.
 
-##Bleeding
+___
+
+## Bleeding
 
 When rotating and/or scaling an image while using quads, an effect can appear called *bleeding*. What happens is that part of the image outside of the quad gets drawn.
 
@@ -329,10 +335,12 @@ The blue line is our quad. As you can see, the quad is 2 pixels to the left of w
 newQuad(1 + j * (frame_width + 2), 1 + i * (frame_height + 2), frame_width, frame_height, width, height)
 ```
 
-And now our quads are in the correct position. Here's an image visualizing how we position the quad.
+And now our quads are in the correct position. Here's an image visualizing how we position the quad. So we add 1, then add `frame_width` + 2, multiplied by `i`. This way we position the quad correctly for each frame.
 
 ![](/images/book/17/whatisgoingon.png)
 
-##TL;DR
+___
 
-With quads we can draw part of an image. we can use this to turn a spritesheet into an animation. In case of multiple rows we can use a for-loop inside a for-loop to cover the whole sheet. We can use ``break`` to end a loop. We add a 1 pixel border to our sprites to prevent *bleeding*.
+## Summary
+
+With quads we can draw part of an image. we can use this to turn a spritesheet into an animation. In case of multiple rows we can use a for-loop inside a for-loop to cover the whole sheet. We can use `break` to end a loop. We add a 1 pixel border to our sprites to prevent *bleeding*.

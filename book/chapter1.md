@@ -1,4 +1,4 @@
-#Chapter 1 - Installation
+# Chapter 1 - Installation
 
 ___
 
@@ -6,7 +6,7 @@ ___
 
 ___
 
-##LÖVE
+## LÖVE
 
 Go to [love2d.org](https://www.love2d.org/).
 
@@ -14,9 +14,9 @@ You should download either the 32-bit or the 64-bit **installer**. This depends 
 
 ![](/images/book/1/download_love.png)
 
-Open the installer. Click on *Next*. Click on *I agree*. Now you can decide where you install LÖVE. It doesn't matter where you install LÖVE, but remember the folder. This folder will be referred to as the *Installation Folder*.
+Open the installer. Click on *Next*. Click on *I agree*. Now you can decide where you install LÖVE. It doesn't matter where you install LÖVE, but make sure you remember the location because we need it in a moment. This folder will be referred to as the *Installation Folder*.
 
-My installation folder will be ``C:/Program Files/LOVE``.
+My installation folder will be `C:/Program Files/LOVE`.
 
 Click on *Next*. Click on *Install*.
 
@@ -24,9 +24,9 @@ When LÖVE is done installing, click on *Finish*.
 
 ___
 
-##ZeroBrane Studio
+## ZeroBrane Studio
 
-Now we need to install a text-editor. We're going to use ZeroBrane Studio in this tutorial.
+Now we need to install a text editor. We're going to use ZeroBrane Studio in this tutorial.
 
 Go to [studio.zerobrane.com](https://studio.zerobrane.com/), and click on "Download".
 
@@ -45,7 +45,7 @@ Now we need to make a Project Folder. Open you file explorer and create a folder
 ![](/images/book/1/project_brane.png)
 
 
-In ZeroBrane Studio, create a new file. ``File`` -> ``New``, or use the shortcut ``Ctrl + N``. 
+In ZeroBrane Studio, create a new file. `File` -> `New`, or use the shortcut `Ctrl + N`. 
 
 Inside this file, write the following code:
 ```lua
@@ -54,31 +54,31 @@ function love.draw()
 end
 ```
 
-Go to ``File`` -> ``Save``, or use the shortcut ``Ctrl + S``. Save the file as ``main.lua``.
+Go to `File` -> `Save`, or use the shortcut `Ctrl + S`. Save the file as `main.lua`.
 
-Go to ``Project`` -> ``Lua Interpreter`` and select ``LÖVE``.
+Go to `Project` -> `Lua Interpreter` and select `LÖVE`.
 
 Now when you press the F6, a window should open with the text "Hello World!". Congratulations, you're ready to start learning LÖVE. Whenever I tell you to *run the game* or *run the code* I'm telling you to press F6 to execute LÖVE.
 
-In case nothing happens and the following text shows up: *Can't find love2d executable in any of the following folders*, you installed LÖVE somewhere where ZeroBrane Studio can't find it. Go to ``Edit`` -> ``Preferrences`` -> ``Settings: User``. Put in the following:
+In case nothing happens and the following text shows up: *Can't find love2d executable in any of the following folders*, you installed LÖVE somewhere where ZeroBrane Studio can't find it. Go to `Edit` -> `Preferrences` -> `Settings: User`. Put in the following:
 
 ```lua
 path.love2d = 'C:/path/to/love.exe'
 ```
 
-And replace ``'C:/path/to/love.exe'`` with the path to where you installed LÖVE. Make sure to use frontslashes (/).
+And replace `'C:/path/to/love.exe'` with the path to where you installed LÖVE. Make sure to use frontslashes (/).
 
 ___
 
-##A few more things
+## A few more things
 
-Did you copy/paste the above code? I encourage you to type the code I show you yourself. That might seem like a lot of extra work, but by doing so it will help you memorize everything a lot better.
+Did you copy/paste the example code? I encourage you to type the code I show you yourself. That might seem like a lot of extra work, but by doing so it will help you memorize everything a lot better.
 
 The one thing you don't need to type yourself are comments.
 
 ```lua
---This line is a comment. This is not code.
---The next line is code:
+-- This line is a comment. This is not code.
+-- The next line is code:
 
 print(123)
 
@@ -87,6 +87,18 @@ print(123)
 
 Every line starting with 2 minus-signs (--) is a *comment*. The computer ignores it, meaning we can type anything we want without getting an error. I can use comments to explain certain code better. When typing over the code you don't have to copy the comments.
 
-With ``print`` we can send information to our *Output console*. This is the box at the bottom of our editor. When you close the game, it should say the text "123". I add the text ``--Output:`` to show you the expected output.
+With `print` we can send information to our *Output console*. This is the box at the bottom of our editor. **When you close the game**, it should say the text "123". I add the text `--Output:` to show you the expected output. This is not to be confused with `love.graphics.print`.
 
-And with that, let's begin to learn how to program games!
+If you put the following code at the top of your `main.lua` you will see the prints right away. How this works is not important, basically you turn off that the program should wait to be closed before showing the prints.
+
+```lua
+io.stdout:setvbuf("no")
+```
+
+___
+
+## Alternative text editors
+
+* [Atom](https://love2d.org/wiki/Atom)
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Sublime Text](https://love2d.org/wiki/Sublime_Text)

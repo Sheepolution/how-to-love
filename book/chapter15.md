@@ -1,6 +1,7 @@
-#Chapter 15 - Distributing your game
+﻿# Chapter 15 - Distributing your game
+
 ___
-*We use the code of the previous chapter*
+*We use the code from the previous chapter*
 ___
 
 You made a game, and you want to share it with others. You could make them install LÖVE on their computer, but that is not necassary.
@@ -18,11 +19,11 @@ end
 
 Save the file. Now when you run the game you'll see the game has the title "Panda Shooter!", and that the icon is the panda.
 
-This is what the config file is for. LÖVE loads ``conf.lua`` before it starts the game and applies the configurations. For a full list of options check out the [wiki](https://love2d.org/wiki/Config_Files).
+This is what the config file is for. LÖVE loads `conf.lua` before it starts the game and applies the configurations. For a full list of options check out the [wiki](https://love2d.org/wiki/Config_Files).
 
 Now that our game has the correct title and icon, let's turn it into an executable.
 
-First we need to package our game in a zip file. Go to the folder of your game, select all the files. Now right click, go to *Send to* and click on *Compressed (zipped) folder*. The filename is not important, but we need to change the extension to ``.love`` (by default ``.zip``).
+First we need to package our game in a zip file. Go to the folder of your game, select all the files. Now right click, go to *Send to* and click on *Compressed (zipped) folder*. The filename is not important, but we need to change the extension to `.love` (by default `.zip`).
 
 ![](/images/book/15/compress.png)
 
@@ -40,17 +41,21 @@ A new window opens. Click on the tab ***View***. In ***Advanced options***, make
 
 ![](/images/book/15/folder_options.png)
 
-Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip?dl=1), and unzip all the files in a folder.
+I wrote a bat file that packages the game for you. Download [this zip file](https://drive.google.com/file/d/1gaqhvQ9tuluml1W6GXHc4F0XPj1iSxR2/view?usp=sharing), and unzip all the files in a folder.
 
-Now move your .love file on top of ``create_exe.bat``. This creates a ``.exe`` file in the game folder.
-
-Package all the files inside the ``game`` folder in a zip file. This is the file that you will want to share with people. They have to extract all the files in a folder and open the ``.exe`` file.
+Now move your `.love` file on top of `build.bat`. This creates a `.zip` file in the same folder. This is the file that you will want to share with people. They have to extract all the files in a folder and open the `.exe` file.
 
 Now you need to find a place to share your game. Check out [itch.io](https://itch.io/).
 
+For more information on building your game, check out the [LÖVE wiki page](https://www.love2d.org/wiki/Game_Distribution) for it. It also tells you how to build your game for other platforms.
+
 ___
 
-##TL;DR
-With [conf.lua](https://love2d.org/wiki/Config_Files) you can configure things about your game like title and icon.
+## Castle
 
-Select all the files in the folder of your game, put them in a zip. Change the file's extension from ``.zip`` to ``.love``. Download [this zip file](https://www.dropbox.com/s/vtmgcxk1r3xmso3/builder.zip?dl=1), and unzip all the files in a folder. Move your ``.love`` on top of ``create_exe.bat``. Select all the files in the folder ``game`` and put them in a zip. People will have to unzip all the files in a folder and open the ``.exe`` to play your game. 
+[Castle](https://castle.games/) is a client that allows you to easily share your LÖVE games. Check it out!
+
+___
+
+## Summary
+With [conf.lua](https://love2d.org/wiki/Config_Files) you can configure things about your game like title and icon. Select all the files in the folder of your game, put them in a zip. Change the file's extension from `.zip` to `.love`. Download [this zip file](https://drive.google.com/file/d/1gaqhvQ9tuluml1W6GXHc4F0XPj1iSxR2/view?usp=sharing), and unzip all the files in a folder. Move your `.love` on top of `build.bat` to create a `.zip`. People will have to unzip all the files in a folder and open the `.exe` to play your game. We can also use Castle which is a client that allows us to share our LÖVE games.

@@ -1,8 +1,8 @@
-#Chapter 16 - Angles and distance
+# Chapter 16 - Angles and distance
 
-##Angle
+## Angle
 
-Let's make a circle that follows our mouse cursor.
+Let's make a circle that moves in the direction of our mouse cursor.
 
 Start with creating a circle.
 
@@ -25,7 +25,7 @@ function love.draw()
 end
 ```
 
-To move the circle to the cursor, we need to know the angle. We can get the angle with the function ``math.atan2``. The first argument is the y-position you want to go to, minus your object's y-position. The second argument is the same but for the x-position. This is one of the rare occasions where y comes before x.
+To move the circle towards the cursor, we need to know the angle. We can get the angle with the function `math.atan2`. The first argument is the y-position you want to go to, minus your object's y-position. The second argument is the same but for the x-position. This is one of the rare occasions where y comes before x.
 
 Basically what atan2 does is that it takes a vertical and horizontal vector (distance + direction), and with that information it returns an angle.
 
@@ -57,7 +57,9 @@ function love.draw()
 end
 ```
 
-If atan2 confuses you, don't worry. All you need to know is: ``math.atan2(target_y - object_y, target_x - object_x)`` gives you the angle. In our case the object is the circle and the target is our cursor.
+![](/images/book/16/angle.gif)
+
+If atan2 confuses you, don't worry. All you need to know is: `math.atan2(target_y - object_y, target_x - object_x)` gives you the angle. In our case the object is the circle and the target is our cursor.
 
 It's about to get mathy in here, but don't let it frighten you. It's not that difficult, and if you don't understand that's completely fine at a beginner level.
 
@@ -80,13 +82,15 @@ The number π, sometimes written as Pi, is the ratio of a circle's circumference
 
 ![](/images/book/16/pi.gif)
 
-In Lua we can get π by using ``math.pi``.
+In Lua we can get π by using `math.pi`.
 
 If you don't understand that's fine for now. Don't be discouraged if you don't get something the first time.
 
-##Sine and cosine
+___
 
-Now we need to make our circle move towards the mouse. For this we will use ``math.cos`` and ``math.sin``.
+## Sine and cosine
+
+Now we need to make our circle move towards the mouse. For this we will use `math.cos` and `math.sin`.
 
 Both functions will return a number between -1 and 1 based on the angle we pass.
 
@@ -124,9 +128,9 @@ circle.x = circle.x + circle.speed * cos * dt
 circle.y = circle.y + circle.speed * sin * dt
 ```
 
-Then our circle would move horizontally with ``circle.speed * 0.7``
+Then our circle would move horizontally with `circle.speed * 0.7`
 
-And would move vertically with ``circle.speed * -0.7``.
+And would move vertically with `circle.speed * -0.7`.
 
 Which means it should move straight towards our mouse. Try it out!
 
@@ -158,7 +162,11 @@ function love.draw()
 end
 ```
 
-##Distance
+![](/images/book/16/following_circle.gif)
+
+___
+
+## Distance
 
 Now let's say we only want to move the circle when it's near our cursor. To do that we need to calculate the distance between them. For this we use the Pythagorean theorem.
 
@@ -168,7 +176,7 @@ With the Pythagorean theorem you can calculate the longest line in a triangle wi
 
 Basically what you do is you use the length of the shorter sides to make 2 squares. Then you sum up those squares to make one big square. And finally you find the root of the square and you get the length of the longest line, also known as the *hypotenuse*.
 
-When you have 2 points, in our case the circle and cursor, there is also an invisible triangle.
+So how does this help us with finding the distance? Well, when you have 2 points, in our case the circle and cursor, there is also an invisible triangle.
 
 Check it out:
 
@@ -194,7 +202,7 @@ function getDistance(x1, y1, x2, y2)
 end
 ```
 
-Next we need to square these numbers. We can do this by multiplying it by itself or with ``^2``.
+Next we need to square these numbers. We can do this by multiplying it by itself or with `^2`.
 
 ```lua
 function getDistance(x1, y1, x2, y2)
@@ -207,7 +215,7 @@ function getDistance(x1, y1, x2, y2)
 end
 ```
 
-Now we need to sum these numbers and get the *square root*. If you do 5*5, or 5^2, you get 25. So the square root of 25 is 5. We can get the square root with ``math.sqrt``.
+Now we need to sum these numbers and get the *square root*. If we square 5, so we do 5*5, or 5^2, we get 25 So the square root of 25 is 5. We can get the square root with `math.sqrt`.
 
 ```lua
 function getDistance(x1, y1, x2, y2)
@@ -237,6 +245,8 @@ function love.draw()
 end
 ```
 
+![](/images/book/16/following_circle_distance.gif)
+
 It works! Now let's have some fun with it. I want the circle to only move when it's closer than 200 pixels, and the closer it gets the slower it moves.
 
 ```lua
@@ -254,8 +264,11 @@ function love.update(dt)
 	end
 end
 ```
+![](/images/book/16/following_circle_distance_speed.gif)
 
-##Image
+___
+
+## Image
 Let's use an image and make it look at the cursor.
 
 ![](/images/book/16/arrow_right.png)
@@ -310,7 +323,9 @@ function love.load()
 	arrow.origin_x = arrow.image:getWidth() / 2
 	arrow.origin_y = arrow.image:getHeight() / 2
 end
+```
 
+```lua
 function love.draw()
 	love.graphics.draw(arrow.image,
 		arrow.x, arrow.y, arrow.angle, 1, 1,
@@ -320,7 +335,10 @@ end
 ```
 And now it correctly points to our cursor
 
+![](/images/book/16/following_arrow.gif)
 
-##TL;DR
+___
 
-We can make an object move at an angle by getting the cosine and sine of the angle. Next we move with the x with a speed multiplied by the cosine, and y with the speed multiplied by sine. We can calculate the distance between to points by using the Pythagorean theorem. When using an image you should have it point to the right by default. Don't forget to put its origin in the center.
+## Summary
+
+We can make an object move at an angle by getting the cosine and sine of the angle. Next we move with the x with a speed multiplied by the cosine, and y with the speed multiplied by sine. We can calculate the distance between two points by using the Pythagorean theorem. When using an image you should have it point to the right by default. Don't forget to put its origin in the center.

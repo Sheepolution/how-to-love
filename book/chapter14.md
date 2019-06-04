@@ -1,10 +1,12 @@
-#Chapter 14 - Game: Shoot the enemy
+# Chapter 14 - Game: Shoot the enemy
 
-Let's use everything we learned so far to create a simple game. You can read about programming all you want but to really learn it you have to do it.
+Let's use everything we learned so far to create a simple game. You can read about programming and making games all you want, but to really learn it you'll have to do it.
 
 A game is essentially a bunch of problems that you have to solve. When you ask an experienced programmer to make PONG, he won't look up a *How to make PONG*. They can divide PONG into separate problems, and know how to solve each one of them. This chapter is to show you how to split a game into multiple tasks.
 
 The game we'll be making is simple: An enemy is bouncing against the walls. We have to shoot it. Each time we shoot it, the enemy goes a little faster. When you miss, it's game over and you'll have to start over again.
+
+![](/images/book/14/demo.gif)
 
 For this game we're going to use images. You're free to use your own images, but I'm going to use these 3:
 
@@ -30,13 +32,13 @@ function love.draw()
 end
 ```
 
-Let's start with the player. Create a new file called ``player.lua``.
+Let's start with the player. Create a new file called `player.lua`.
 
-We could make a baseclass for all our objects, but because it's such a short simple game we'll do without one.
+We could make a baseclass for all our objects, but because it's such a short simple game we'll do without one. Though I encourage you to improve the code at the end of this chapter by adding a baseclass yourself.
 
 ___
 
-##Task: Create a moving player
+## Task: Create a moving player
 
 Create a Player class:
 
@@ -63,7 +65,7 @@ function Player:draw()
 end
 ```
 
-Next let's make it possible to move our player with our arrowkeys.
+Next let's make it possible to move our player with our arrow keys.
 
 ```lua
 function Player:new()
@@ -86,7 +88,7 @@ function Player:draw()
 end
 ```
 
-And now we should be able to move our player. Let's go back to ``main.lua`` and load our player.
+And now we should be able to move our player. Let's go back to `main.lua` and load our player.
 
 ```lua
 --! file: main.lua
@@ -137,34 +139,15 @@ end
 Oops, our player can still move too far to the right. We need to include our width when checking if we're hitting the right wall.
 
 ```lua
-function Player:new()
-	self.image = love.graphics.newImage("panda.png")
-	self.x = 300
-	self.y = 20
-	self.speed = 500
-	self.width = self.image:getWidth()
-end
+--If the left side is too far too the left then..
+if self.x < 0 then
+	--Set x to 0
+	self.x = 0
 
-function Player:update(dt)
-	if love.keyboard.isDown("left") then
-		self.x = self.x - self.speed * dt
-	elseif love.keyboard.isDown("right") then
-		self.x = self.x + self.speed * dt
-	end
-
-	--Get the width of the window
-	local window_width = love.graphics.getWidth()
-
-	--If the left side is too far too the left then..
-	if self.x < 0 then
-		--Set x to 0
-		self.x = 0
-
-	--Else, if the right side is too far to the right then..
-	elseif self.x + self.width > window_width then
-		--Set the right side to the window's width.
-		self.x = window_width - self.width
-	end
+--Else, if the right side is too far to the right then..
+elseif self.x + self.width > window_width then
+	--Set the right side to the window's width.
+	self.x = window_width - self.width
 end
 ```
 
@@ -172,9 +155,9 @@ And now it's fixed. Our player can't move out of the window anymore.
 
 ___
 
-##Task: Create a moving enemy
+## Task: Create a moving enemy
 
-Now let's make the Enemy class. Create a new file called ``enemy.lua``, and type the following:
+Now let's make the Enemy class. Create a new file called `enemy.lua`, and type the following:
 
 ```lua
 --! file: enemy.lua
@@ -186,7 +169,7 @@ function Enemy:new()
 end
 ```
 
-I'm going to give the enemy the snake image, and make it move out of its own.
+I'm going to give the enemy the snake image, and make it move by itself.
 
 
 ```lua
@@ -254,16 +237,12 @@ function Enemy:update(dt)
 	end
 end
 ```
-___
-*"This is becoming pretty similar to the player class, are you sure we shouldn't make a baseclass?"*
 
-Okay let me explain this really quick. We're making this game "quick and dirty". This chapter is about making stuff work, not about efficiency, that is for another chapter. Yes, clean code is important, but it's not as important as knowing how to make a game. I want to make these tutorials as short and compact as possible. By having you make a baseclass I'd have to make this chapter even longer. That all said, I encourage you to improve the code at the end of this chapter.
-___
-Now let's get back to our code. Our enemy stops at the wall, but we want to make it bounce. How are we going to make it do that? It hits the right wall, and then what? It should move to the other direction. How do we make it move to the other direction? By changing the value of ``speed``. And what should the value of ``speed`` become? It shouldn't be 100 but -100.
+Our enemy stops at the wall, but we want to make it bounce. How are we going to make it do that? It hits the right wall, and then what? It should move to the other direction. How do we make it move to the other direction? By changing the value of `speed`. And what should the value of `speed` become? It shouldn't be 100 but -100.
 
-So should we do ``self.speed = -100``? Well no. Because like I said before we'll make the enemy speed up as it gets hit. Instead, we should invert the value of ``speed``. So ``speed`` becomes ``-speed``.
+So should we do `self.speed = -100`? Well no. Because like I said before we'll make the enemy speed up as it gets hit, and this way it would reset its speed when it bounces. Instead, we should invert the value of `speed`. So `speed` becomes `-speed`. In other words, if the speed were to be increased to 120, it would then become -120.
 
-And what if it hits the left wall? At that point speed is a negative number, and we should turn it into a positive number. How can we do that? Well, [2 times negative makes positive](https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-negative-numbers/v/multiplying-positive-and-negative-numbers). So if we say that ``speed``, which at that point is a negative number, becomes ``-speed``, it will turn into a positive number.
+And what if it hits the left wall? At that point speed is a negative number, and we should turn it into a positive number. How can we do that? Well, [negative times negative makes positive](https://www.khanacademy.org/math/algebra-basics/basic-alg-foundations/alg-basics-negative-numbers/v/why-a-negative-times-a-negative-is-a-positive). So if we say that `speed`, which at that point is a negative number, becomes `-speed`, it will turn into a positive number.
 
 ```lua
 function Enemy:update(dt)
@@ -285,9 +264,9 @@ Alright we got a player and a moving enemy, now all that's left is the bullet.
 
 ___
 
-##Task: Be able to shoot bullets
+## Task: Be able to shoot bullets
 
-Create a new file called ``bullet.lua``, and write the following code:
+Create a new file called `bullet.lua`, and write the following code:
 
 ```lua
 --! file: bullet.lua
@@ -355,7 +334,7 @@ function Player:keyPressed(key)
 end
 ```
 
-And we need to call this function in the ``love.keypressed`` callback.
+And we need to call this function in the `love.keypressed` callback.
 
 ```lua
 --! file: main.lua
@@ -400,7 +379,7 @@ Awesome, our player can now shoot bullets.
 
 ___
 
-##Task: Make bullets affect the enemy's speed
+## Task: Make bullets affect the enemy's speed
 
 Now we need to make it so that the snake can get hit by the bullet. We give Bullet a collision detection function.
 
@@ -413,7 +392,7 @@ end
 
 Do you still know how to do it? Do you still know the 4 conditions that need to be true to assure collision is happening?
 
-Instead of returning true and false, we increase the enemy's speed. We give the property ``dead`` to the bullet, which we'll use to remove it from the list.
+Instead of returning true and false, we increase the enemy's speed. We give the property `dead` to the bullet, which we'll use to remove it from the list.
 
 ```lua
 function Bullet:checkCollision(obj)
@@ -456,7 +435,7 @@ function love.update(dt)
 end
 ```
 
-We now need to destroy the bullets that are dead.
+And next we need to destroy the bullets that are dead.
 
 ```lua
 function love.update(dt)
@@ -526,5 +505,5 @@ And with that our game is finished. Or is it? You should try adding features to 
 
 ___
 
-##TL;DR
+## Summary
 A game is essentially a bunch of problems that need to be solved.

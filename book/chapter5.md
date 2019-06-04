@@ -1,4 +1,4 @@
-#Chapter 5 - Moving a rectangle
+# Chapter 5 - Moving a rectangle
 
 Now we can start with what I like to call "The fun part". We're going to make stuff move!
 
@@ -29,6 +29,8 @@ function love.draw()
 end
 ```
 
+![](/images/book/5/rectangle.png)
+
 The second and third argument of this function are the x and y position.
 
 x means "horizontal position on the screen". 0 is the left of the screen.
@@ -39,7 +41,7 @@ y means "vertical position on the screen". 0 is the top of the screen.
 
 Now we want to make the rectangle move. It's time to start thinking like a programmer. What exactly needs to happen in order for the rectangle to move to the right? The x-position needs to go up. 100, 101, 102, 103, 104, etc. But we can't change 100 to 101. 100 is simply 100. We need to have something that can change in any number we want it to be. That's right, a **variable**!
 
-In love.load, create a new variable called ``x``, and replace the 100 in ``love.graphics.rectangle`` with ``x``.
+In love.load, create a new variable called `x`, and replace the 100 in `love.graphics.rectangle` with `x`.
 
 ```lua
 function love.load()
@@ -51,11 +53,11 @@ function love.draw()
 end
 ```
 
-So now the x-position of our rectangle is the value of ``x``.
+So now the x-position of our rectangle is the value of `x`.
 
-Note that the variable name ``x`` is just a name. We could've named it ``icecream`` for that matter. Functions don't care about variable names, it only cares about its value.
+Note that the variable name `x` is just a name. We could've named it `icecream` or `unicorn` or whatever. Functions don't care about variable names, it only cares about its value.
 
-Now we want to make the rectangle move. We do this in love.update. Every update we want to increase ``x`` by 5. In other words, ``x`` needs to be value of ``x`` + 5. And that's exactly how we write.
+Now we want to make the rectangle move. We do this in love.update. Every update we want to increase `x` by 5. In other words, `x` needs to be value of `x` + 5. And that's exactly how we write.
 
 ```lua
 function love.update()
@@ -63,13 +65,15 @@ function love.update()
 end
 ```
 
-So now when ``x`` equals 100, it will change ``x`` into 100 + 5. Then next update ``x`` is 105 and ``x`` will change into 105 + 5, etc.
+So now when `x` equals 100, it will change `x` into 100 + 5. Then next update `x` is 105 and `x` will change into 105 + 5, etc.
 
 Run the game. The rectangle should now be moving.
 
+![](/images/book/5/rectangle_move.gif)
+
 ___
 
-##Delta time
+## Delta time
 
 We got a moving rectangle, but there's one small problem. If you were to run the game on a different computer, the rectangle might move with a different speed. This is because not all computers update at the same rate, and that can cause problems.
 
@@ -96,7 +100,7 @@ Delta time is the time that has passed between the previous and the current upda
 
 On computer B, delta time would be 1 / 200, which is 0.005.
 
-So in 1 second, computer A updates 100 times, and increases ``x`` by 5 x 0.01, and computer B updates 200 times and increases ``x`` by 5 x 0.005.
+So in 1 second, computer A updates 100 times, and increases `x` by 5 x 0.01, and computer B updates 200 times and increases `x` by 5 x 0.005.
 
 100 x 5 * 0.01 = 5
 
@@ -113,5 +117,5 @@ Now our rectangle moves 5 pixels per second, on all computers. Change 5 to 100 t
 
 ___
 
-##TL;DR
+## Summary
 We use a variable that we increase on each update to make the rectangle move. When increasing we multiply the added value by delta time. Delta time is the time between the previous and current update. Using delta time makes sure that our rectangle moves with the same speed on all computers.

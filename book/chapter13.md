@@ -1,9 +1,9 @@
-#Chapter 13 - Collision
+# Chapter 13 - Detecting collision
 Let's say we're making a game where you can shoot down monsters. A monster should die when it is hit by a bullet. So what we need to check is: Is the monster colliding with a bullet?
 
-We're going to create a *collision check* function. For that we need to know, when do 2 rectangles collide?
+We're going to create a *collision check* function. We will be checking collision between rectangles. This is called AABB collision. So we need to know, when do two rectangles collide?
 
-I created an image with 3 examples:
+I created an image with three examples:
 
 ![](/images/book/13/rectangles1.png)
 
@@ -17,7 +17,7 @@ Take a look at the positions of the rectangles. In the first example, Red is not
 
 But it's also true for example 2. We need more conditions to be sure there is collision. So example 2 shows we can't go too far to the right. How far exactly can we go? How much would Red have to move to the left for there to be collision? When **Red's left side** is further to the **left** than **Blue's right side**.
 
-So we have 2 conditions, is that enough to ensure there is collision?
+So we have two conditions, is that enough to ensure there is collision?
 
 Well no, look at the following image:
 
@@ -27,7 +27,7 @@ This situation agrees with our conditions. Red's right side is further to the ri
 
 But if we move it too far down, there won't be collision anymore. How far can Red move down, and still collide with Blue? As long as **Red's top side** is further to the **top** than **Blue's bottom side**.
 
-Now we got 4 conditions. Are all 4 conditions true for these 3 examples?
+Now we got four conditions. Are all four conditions true for these three examples?
 
 ![](/images/book/13/rectangles3.png)
 
@@ -41,7 +41,7 @@ Now we got 4 conditions. Are all 4 conditions true for these 3 examples?
 
 Yes, they are! Now we need to turn this information into a function.
 
-First let's create 2 rectangles.
+First let's create two rectangles.
 
 ```lua
 function love.load()
@@ -99,7 +99,7 @@ function checkCollision(a, b)
 end
 ```
 
-Now that we have the 4 sides of each rectangle, we can use them to put our conditions in an if-statement.
+Now that we have the four sides of each rectangle, we can use them to put our conditions in an if-statement.
 
 ```lua
 function checkCollision(a, b)
@@ -151,11 +151,13 @@ function love.draw()
 end
 ```
 
-It works! Now you know how to detect collision between 2 rectangles.
+It works! Now you know how to detect collision between two rectangles.
 
-#TL;DR
+___
 
-Collision between 2 rectangles can be checked with 4 conditions.
+## Summary
+
+Collision between two rectangles can be checked with four conditions.
 
 Where A and B are rectangles:
 

@@ -1,5 +1,4 @@
-#Chapter 18 - Tiles
-
+# Chapter 18 - Tiles
 
 ___
 
@@ -18,7 +17,7 @@ function love.load()
 end
 ```
 
-This is our level. A ``1`` is a tile and a ``0`` is empty. Now we need to draw it. We loop through the table, and every time we encounter a 1, we draw a rectangle on its position.
+This is our level. A `1` is a tile and a `0` is empty. Now we need to draw it. We loop through the table, and every time we encounter a 1, we draw a rectangle on its position.
 
 ```lua
 function love.draw()
@@ -28,11 +27,13 @@ function love.draw()
 	--Every iteration v becomes the value on position i, so in our case 1, 0, 0, 1, 1, 0, etc.
 	for i,v in ipairs(tilemap) do
 		if v == 1 then
-			love.graphics.rectangle("fill", i * 25, 100, 25, 25)
+			love.graphics.rectangle("line", i * 25, 100, 25, 25)
 		end
 	end
 end
 ```
+
+![](/images/book/18/one_row.png)
 
 Okay so this works, but now we want to go vertical. We do this by putting tables inside a table, also known as a 2D table.
 
@@ -66,9 +67,11 @@ The red house is on the 3rd row on the 2nd column.
 
 With 2D tables we acces the values like this:
 
-``tilemap[4][3]``
+`tilemap[4][3]`
 
 This means: The 3rd value of the 4th table. Or: The 3rd column on the 4th row.
+
+![](/images/book/18/2d_table.gif)
 
 Let's draw our level. Because we have a 2D table, we need to use a for-loop inside a for-loop. This is also called a *nested for-loop*.
 
@@ -78,12 +81,14 @@ function love.draw()
 
 	--For i=1 till the number of values in tilemap
 	for i=1,#tilemap do
-		--for j till the number of values in this row
+		--For j till the number of values in this row
 		for j=1,#tilemap[i] do
-			--if the value on row i, column j equals 1
+			--If the value on row i, column j equals 1
 	   		if tilemap[i][j] == 1 then
-	   			--Draw the rectangle
-	   			love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
+	   			--Draw the rectangle.
+	   			--Use i and j to position the rectangle.
+	   			-- j for x, i for y.
+	   			love.graphics.rectangle("line", j * 25, i * 25, 25, 25)
 	   		end	
    		end
    	end
@@ -92,7 +97,7 @@ end
 
 So we loop through our rows, and for every row we loop through our columns.
 
-We use ``j``, of our inner for-loop, for our horizontal positioning and ``i``, of our outer for-loop for the y positioning. Remember that these are just variable names and can be named whatever, but using i and j like this is common.
+We use `j`, of our inner for-loop, for our horizontal positioning and `i`, of our outer for-loop for the y positioning. Remember that these are just variable names and can be named whatever, but using i and j like this is common.
 
 Let's turn the for-loops into an ipairs loop.
 
@@ -101,16 +106,16 @@ function love.draw()
 	for i,row in ipairs(tilemap) do
 		for j,tile in ipairs(row) do
 	   		if tile == 1 then
-	   			love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
+	   			love.graphics.rectangle("line", j * 25, i * 25, 25, 25)
 	   		end	
    		end
    	end
 end
 ```
 
-We use the variable names ``row`` and ``tile`` to make it more clear what is going on. We loop through the table ``tilemap``, and each value is a *row*. We loop through the row and each value is a *tile*.
+We use the variable names `row` and `tile` to make it more clear what is going on. We loop through the table `tilemap`, and each value is a *row*. We loop through the row and each value is a *tile*.
 
-We can also use different numbers for our tiles, and use these numbers to give the tiles different colours.
+We can also use different numbers for our tiles, and use these numbers to give the tiles different colors.
 
 ```lua
 function love.load()
@@ -127,28 +132,28 @@ function love.draw()
 	for i,row in ipairs(tilemap) do
 		for j,tile in ipairs(row) do
 			--First check if the tile is not zero
-	   		if tile ~= 0 then
-	   			
-	   			--Set the color based on the tile number
-	   			if tile == 1 then
-	   				--setColor uses RGB, A is optional
-	   				--Red, Green, Blue, Alpha
-	   				love.graphics.setColor(255, 255, 255)
-	   			elseif tile == 2 then
-	   				love.graphics.setColor(255, 0, 0)
-	   			elseif tile == 3 then
-	   				love.graphics.setColor(255, 0, 255)
-	   			elseif tile == 4 then
-	   				love.graphics.setColor(0, 0, 255)
-	   			elseif tile == 5 then
-	   				love.graphics.setColor(0, 255, 255)
-	   			end
+			if tile ~= 0 then
+				
+				--Set the color based on the tile number
+				if tile == 1 then
+					--setColor uses RGB, A is optional
+					--Red, Green, Blue, Alpha
+					love.graphics.setColor(1, 1, 1)
+				elseif tile == 2 then
+					love.graphics.setColor(1, 0, 0)
+				elseif tile == 3 then
+					love.graphics.setColor(1, 0, 1)
+				elseif tile == 4 then
+					love.graphics.setColor(0, 0, 1)
+				elseif tile == 5 then
+					love.graphics.setColor(0, 1, 1)
+				end
 
-	   			--Draw the tile
-	   			love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
-	   		end	
-   		end
-   	end
+				--Draw the tile
+				love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
+			end	
+		end
+	end
 end
 ```
 
@@ -167,11 +172,11 @@ function love.load()
 	--Create a table named colors
 	colors = {
 		--Fill it with tables filled with RGB numbers
-		{255, 255, 255},
-		{255, 0, 0},
-		{255, 0, 255},
-		{0, 0, 255},
-		{0, 255, 255}
+		{1, 1, 1},
+		{1, 0, 0},
+		{1, 0, 1},
+		{0, 0, 1},
+		{0, 1, 1}
 	}
 end
 
@@ -179,20 +184,20 @@ function love.draw()
 	for i,row in ipairs(tilemap) do
 		for j,tile in ipairs(row) do
 			--First check if the tile is not zero
-	   		if tile ~= 0 then
-	   			--Set the color. .setColor() also accepts a table with 3 numbers.
-	   			--We pass the table with as position the value of tile.
-	   			--So if tile equals 3 then we pass colors[3] which is {255, 0, 255}
-	   			love.graphics.setColor(colors[tile])
-	   			--Draw the tile
-	   			love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
-	   		end	
-   		end
-   	end
+			if tile ~= 0 then
+				--Set the color. .setColor() also accepts a table with 3 numbers.
+				--We pass the table with as position the value of tile.
+				--So if tile equals 3 then we pass colors[3] which is {1, 0, 1}
+				love.graphics.setColor(colors[tile])
+				--Draw the tile
+				love.graphics.rectangle("fill", j * 25, i * 25, 25, 25)
+			end	
+		end
+	end
 end
 ```
 
-##Images
+## Images
 
 So we can make a colorful level, but now we want to use images. Well that's easy, just add an image, get the width and height, and draw the image instead of a rectangle.
 
@@ -218,23 +223,21 @@ function love.load()
 		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
 	}
 
-
 	colors = {
 		--Fill it with tables filled with RGB numbers
-		{255, 255, 255},
-		{255, 0, 0},
-		{255, 0, 255},
-		{0, 0, 255},
-		{0, 255, 255}
+		{1, 1, 1},
+		{1, 0, 0},
+		{1, 0, 1},
+		{0, 0, 1},
+		{0, 1, 1}
 	}
-
 end
 
 function love.draw()
 	for i,row in ipairs(tilemap) do
 		for j,tile in ipairs(row) do
 	   		if tile ~= 0 then
-	   			love.graphics.setColor(colors[v])
+	   			love.graphics.setColor(colors[tile])
 	   			--Draw the image
 	   			love.graphics.draw(image, j * width, i * height)
 	   		end	
@@ -242,6 +245,8 @@ function love.draw()
    	end
 end
 ```
+
+![](/images/book/18/colors_tile.png)
 
 So that's easy. But what if we want to draw different images? Well we could use multiple images, but in the previous chapter we learned how we can draw part of an image with quads. We can use this for tiles as well.
 
@@ -265,8 +270,8 @@ function love.load()
 	--So we could do:
 	width = 32
 	height = 32
-	--But let's say you didn't know the width and height of a tile
-	--You can also use the number of rows and columns in the tileset
+	--But let's say we don't know the width and height of a tile
+	--We can also use the number of rows and columns in the tileset
 	--Our tileset has 2 rows and 3 columns
 	--But we need to subtract 2 to make up for the empty pixels we included to prevent bleeding
 	width = (image_width / 3) - 2
@@ -276,7 +281,7 @@ function love.load()
 	quads = {}
 
 	for i=0,1 do
-		for i=0,2 do
+		for j=0,2 do
 			--The only reason this code is split up in multiple lines
 			--is so that it fits the page
 			table.insert(quads,
@@ -299,7 +304,7 @@ function love.load()
 end
 ```
 
-Now that we have a table with quads, we put the number in our tilemap based on what quad we want. Based on the order we created our quads, they are on this position in our table:
+Now that we have a table with quads, we put the number in our tilemap based on which quad we want. Based on the order we created our quads, they are on this position in our table:
 
 ![](/images/book/18/numbered.png)
 
@@ -332,7 +337,7 @@ function love.draw()
 		for j,tile in ipairs(row) do
 	   		if tile ~= 0 then
 	   			--Draw the image with the correct quad
-	   			love.graphics.draw(image, quads[v], j * width, i * height)
+	   			love.graphics.draw(image, quads[tile], j * width, i * height)
 	   		end	
    		end
    	end
@@ -344,7 +349,7 @@ So on (1,1) we draw the quad on position 1. On (1,2) we draw the quad on positio
 If you run the game you'll see that our level now looks like the image above.
 
 
-##Player
+## Player
 
 Now that we have a level, let's create a player that can walk around, but not go through walls.
 
@@ -364,7 +369,7 @@ function love.load()
 	quads = {}
 
 	for i=0,1 do
-		for i=0,2 do
+		for j=0,2 do
 			table.insert(quads,
 				love.graphics.newQuad(
 					1 + j * (width + 2),
@@ -394,7 +399,7 @@ function love.load()
 end
 ```
 
-The ``tile_x`` and ``tile_y`` is the player's position on our tilemap. This number will be multiplied by the tile width and height when drawn. But first let's make it move. Instead of smooth movement we will make it jump to its next position, so we won't be needing ``dt`` for the movement. This also means that we don't want to know if the movement keys are *down*, but if they are *pressed*. For this we use the ``love.keypressed`` event.
+The `tile_x` and `tile_y` is the player's position on our tilemap. This number will be multiplied by the tile width and height when drawn. But first let's make it move. Instead of smooth movement we will make it jump to its next position, so we won't be needing `dt` for the movement. This also means that we don't want to know if the movement keys are *down*, but if they are *pressed*. For this we use the `love.keypressed` event.
 
 First we create local x and y variable. Next we add or subtract 1 to this variable based on the key that was pressed, and finally we assign this value to the player's position.
 
@@ -439,9 +444,12 @@ function love.draw()
 end
 ```
 
+![](/images/book/18/tile-move-1.gif)
+
 When you run the game you should be able to walk around with your player. But the problem is that he can walk through walls. Let's fix this by checking if the position he wants to go to is a wall.
 
-First make a function called ``isEmpty``. Inside we return wether the value on the coordinates equals 0.
+
+First make a function called `isEmpty`. Inside we return wether the value on the coordinates equals 0.
 
 ```lua
 function isEmpty(x, y)
@@ -475,8 +483,12 @@ function love.keypressed(key)
 end
 ```
 
+![](/images/book/18/tile-move-2.gif)
+
 Yay, now our player is trapped inside our walls. Try to see if you can make it pick things up, or have it open a door when you touch a key. Play around with this because that is how you learn.
 
-#TL;DR
+___
+
+## Summary
 
 We can use tiles to make levels. A tilemap is made out of rows and columns. Each row contains a number of columns. Rows are lined up vertically and columns horizontally. We can use a tileset and quads to draw our level.

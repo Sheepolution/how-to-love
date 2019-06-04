@@ -1,4 +1,4 @@
-#Chapter 2 - Variables
+# Chapter 2 - Variables
 What is a + b?
 
 Well it could be anything. That's because "a" and "b" don't have a value. Let's change that.
@@ -10,7 +10,7 @@ b = 3
 
 Let's take another look, what is a + b? What we're really asking is "What is the value of a + the value of b?". In other words, what is 5 + 3? Which is 8.
 
-To proof that a + b = 8, we're going to print it.
+To prove that a + b = 8, we're going to print it. (We're going to use `print` to make the number appear in our output console)
 
 ```lua
 a = 5
@@ -19,9 +19,9 @@ print(a + b)
 --Output: 8
 ```
 
-Run your code, and your console should say ``8`` .
+Run your code (meaning press F6 and then close the window to show the output) and your console should say `8` .
 
-``a`` and ``b`` are what we call *variables*. A variable is a word in which you can store a value. The number 4 is always 4, and 35 is always 35, but a variable can be anything you want it to be. Hence the name variable.
+`a` and `b` are what we call *variables*. A variable is a word in which you can store a value. The number 4 is always 4, and 35 is always 35, but a variable can be anything you want it to be. Hence the name variable.
 
 The word in which you store a value can be almost anything.
 ```lua
@@ -37,7 +37,7 @@ sheep = 3
 SHEEP = 10
 sHeEp = 200
 ```
-are 3 different variables, with each their own value.
+are three different variables, with each their own value.
 
 You can do more than just summing up numbers.
 ```lua
@@ -63,7 +63,7 @@ b = 3
 c = a + b
 ```
 
-First we say ``a = 5``. When we give a variable a value, we call that an *assignment*. We *assign* 5 to ``a``, and 3 to ``b``. Next we assign ``a + b`` to ``c``. So now ``c`` equals 8. Remember that you can always check the value of a variable with ``print``. If we were to change the value of ``a`` or ``b`` after ``c = a + b``, it would not affect ``c``. It would still be 8.
+First we say `a = 5`. When we give a variable a value, we call that an *assignment*. We *assign* 5 to `a`, and 3 to `b`. Next we assign `a + b` to `c`. So now `c` equals 8. Remember that you can always check the value of a variable with `print`. If we were to change the value of `a` or `b` after `c = a + b`, it would not affect `c`. It would still be 8.
 
 ```lua
 a = 5
@@ -74,17 +74,17 @@ b = 40
 print(c)
 --Output: 8
 ```
-This is because in the computer's eyes ``c`` is not ``a + b``, it's simply 8.
+This is because to the computer `c` is not `a + b`, it's simply 8.
 
 ___
-##Strings
+## Strings
 A variable can also store text.
 ```lua
 text = "Hello World!"
 ```
 This is what we call a *string*. Because it's a string of characters.
 
-We can connect strings by using 2 dots (..)
+We can connect strings by using two dots (..)
 ```lua
 name = "Daniel"
 age = "22"
@@ -94,7 +94,7 @@ print(text)
 ```
 ___
 
-##Variable naming rules
+## Variable naming rules
 There are a few rules when naming a variable. First of all, your variable may have a number in it, but not at the start.
 
 ```lua
@@ -116,5 +116,11 @@ repeat    return    then      true      until     while
 
 ___
 
-##TL;DR (Too long; Didn't read)
+## Usage
+
+Variables can be used to keep track of things. For example, we can have to variable `coins`, and every time we pick up a coin we can do `coins = coins + 1`.
+
+___
+
+## Summary
 Variables are words in which we can store a value like a number or text. You can name them whatever you want, with a few exceptions. Variables are case-sensitive.

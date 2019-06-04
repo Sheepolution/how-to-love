@@ -2,7 +2,7 @@
 <div class="contents"">
 	<ul class="chapters">
 		<li>
-			<a href="/learn/book/0">Chapter 0 - Introduction</a>
+			<a href="/learn/book/0">Introduction</a>
 		</li>
 		<li>
 			<a href="/learn/book/1">Chapter 1 - Installation</a>
@@ -41,7 +41,7 @@
 			<a href="/learn/book/12">Chapter 12 - Images</a>
 		</li>
 		<li>
-			<a href="/learn/book/13">Chapter 13 - Collision</a>
+			<a href="/learn/book/13">Chapter 13 - Detecting collision</a>
 		</li>
 		<li>
 			<a href="/learn/book/14">Chapter 14 - Game: Shoot the enemy</a>
@@ -50,13 +50,31 @@
 			<a href="/learn/book/15">Chapter 15 - Sharing your game</a>
 		</li>
 		<li>
-			<a href="/learn/book/16">Chapter 16 - Angles</a>
+			<a href="/learn/book/16">Chapter 16 - Angles and distance</a>
 		</li>
 		<li>
 			<a href="/learn/book/17">Chapter 17 - Animation</a>
 		</li>
 		<li>
 			<a href="/learn/book/18">Chapter 18 - Tiles</a>
+		</li>
+		<li>
+			<a href="/learn/book/19">Chapter 19 - Audio</a>
+		</li>
+		<li>
+			<a href="/learn/book/20">Chapter 20 - Debugging</a>
+		</li>
+		<li>
+			<a href="/learn/book/21">Chapter 21 - Saving and loading</a>
+		</li>
+		<li>
+			<a href="/learn/book/22">Chapter 22 - Cameras and canvases</a>
+		</li>
+		<li>
+			<a href="/learn/book/23">Chapter 23 - Resolving collision</a>
+		</li>
+		<li>
+			<a href="/learn/book/24">Chapter 24 - Platformer</a>
 		</li>
 	</ul>
 </div>
