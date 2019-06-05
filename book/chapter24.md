@@ -529,8 +529,6 @@ end
 
 ![](/images/book/24/through.gif)
 
-Iets van weet dat ik soms dingen uitleg op zo'n manier dat het snel is en dat je zelf moet nadenken of het beter kan.
-
 ___
 
 ## Summary
