@@ -1,4 +1,5 @@
-﻿# Chapter 15 - Distributing your game
+﻿
+# Chapter 15 - Distributing your game
 
 ___
 *We use the code from the previous chapter*
@@ -24,6 +25,8 @@ This is what the config file is for. LÖVE loads `conf.lua` before it starts the
 Now that our game has the correct title and icon, let's turn it into an executable.
 
 First we need to package our game in a zip file. Go to the folder of your game, select all the files. Now right click, go to *Send to* and click on *Compressed (zipped) folder*. The filename is not important, but we need to change the extension to `.love` (by default `.zip`).
+
+*Note: This part is Windows only. Go [here](https://www.love2d.org/wiki/Game_Distribution) to get info on building your game for other platforms.*
 
 ![](/images/book/15/compress.png)
 

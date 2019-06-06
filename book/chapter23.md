@@ -600,14 +600,14 @@ function Entity:resolveCollision(e)
     end
     -- There was NO collision, return false
     -- (Though not returning anything would've been fine as well)
-    -- (Since returning nothing is the same would result in the returned value being nil)
+    -- (Since returning nothing would result in the returned value being nil)
     ---- ADD THIS
     return false
     -------------
 end
 ```
 
-For our loop until there is no collision left we can use a *while-loop*. This keeps looping as long as the statement is true. Careful though! If you use a while-loop the wrong way, it can create an endless loop and it will crash your game. Because of this, let's also add a limit to the number of loops. It just might happen that in a weird occassion we keep getting collision somehow and we get stuck in an inifite loop. It's better to be safe. If after a 100 loops there is still collision we break the while-loop.
+Now we want to make it so that it keeps checking collision as long as there has been collision resolved. For this we can use a *while-loop*. This keeps looping as long as the statement is true. Careful though! If you use a while-loop the wrong way, it can create an endless loop and it will crash your game. Because of this, let's also add a limit to the number of loops. It just might happen that in a weird occassion we keep getting collision somehow and we get stuck in an inifite loop. It's better to be safe. If after a 100 loops there is still collision we break the while-loop.
 
 ```lua
 --! file:main.lua
