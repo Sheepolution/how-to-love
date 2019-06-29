@@ -73,6 +73,7 @@ function Player:new()
 	self.x = 300
 	self.y = 20
 	self.speed = 500
+	self.width = self.image:getWidth() 
 end
 
 function Player:update(dt)
