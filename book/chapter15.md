@@ -44,7 +44,7 @@ A new window opens. Click on the tab ***View***. In ***Advanced options***, make
 
 ![](/images/book/15/folder_options.png)
 
-I wrote a bat file that packages the game for you. Download [this zip file](https://drive.google.com/file/d/1gaqhvQ9tuluml1W6GXHc4F0XPj1iSxR2/view?usp=sharing), and unzip all the files in a folder.
+I wrote a bat file that packages the game for you. Download [this zip file](https://drive.google.com/file/d/1xX49nDCI0UxjnwY3-h0f-kpdmHVmNqvz/view?usp=sharing), and unzip all the files in a folder.
 
 Now move your `.love` file on top of `build.bat`. This creates a `.zip` file in the same folder. This is the file that you will want to share with people. They have to extract all the files in a folder and open the `.exe` file.
 
