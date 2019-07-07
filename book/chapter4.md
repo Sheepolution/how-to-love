@@ -110,4 +110,4 @@ The functions that LÖVE provides is what we call the API. API stands for [Appli
 ___
 
 ## Summary
-LÖVE is a tool that makes it easier for us to make games. LÖVE uses a programming language called Lua. Everything starting with `love.` is part of the LÖVE framework. The wiki tells us everything we need to know about how to use LÖVE. All the 
+LÖVE is a tool that makes it easier for us to make games. LÖVE uses a programming language called Lua. Everything starting with `love.` is part of the LÖVE framework. The wiki tells us everything we need to know about how to use LÖVE.
