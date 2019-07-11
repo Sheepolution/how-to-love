@@ -42,7 +42,7 @@ function love.draw()
 end
 ```
 
-When you run the game, you should see the text "test" written. We can acces the values of our table by writing the tables name, followed by brackets ([ ]) (So not curly but square brackets!). Inside these brackets, we write the position of the value we want.
+When you run the game, you should see the text "test" written. We can access the values of our table by writing the tables name, followed by brackets ([ ]) (So not curly but square brackets!). Inside these brackets, we write the position of the value we want.
 
 ![](/images/book/7/table.png)
 
