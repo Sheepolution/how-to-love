@@ -247,7 +247,7 @@ end
 
 ![](/images/book/16/following_circle_distance.gif)
 
-It works! Now let's have some fun with it. I want the circle to only move when it's closer than 200 pixels, and the closer it gets the slower it moves.
+It works! Now let's have some fun with it. I want the circle to only move when it's closer than 400 pixels, and the closer it gets the slower it moves.
 
 ```lua
 function love.update(dt)
