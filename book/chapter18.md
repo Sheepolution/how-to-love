@@ -419,9 +419,8 @@ function love.keypressed(key)
 		y = y + 1
 	end
 	
-	x = player.tile_x
-	y = player.tile_y 
-
+	player.tile_x = x
+	player.tile_y = y
 end
 ```
 
