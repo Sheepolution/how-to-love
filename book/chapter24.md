@@ -183,7 +183,7 @@ end
 
 ![](/images/book/24/falling.gif)
 
-It works, the object falls down, but this isn't how gravity works. An object should slowly fall, and as it falls it should gain speed. Let's create something that looks more like real gravity in the `Entity` class. We need a `gravity` and `weight` property. We use the `gravity` property to increase the y-position of the entity, and we use the `strength` property to increase the gravity. So we increase how fast we're falling.
+It works, the object falls down, but this isn't how gravity works. An object should slowly fall, and as it falls it should gain speed. Let's create something that looks more like real gravity in the `Entity` class. We need a `gravity` and `weight` property. We use the `gravity` property to increase the y-position of the entity, and we use the `weight` property to increase the gravity. So we increase how fast we're falling.
 
 
 ```lua
