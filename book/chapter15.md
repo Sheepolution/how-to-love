@@ -5,7 +5,7 @@ ___
 *We use the code from the previous chapter*
 ___
 
-You made a game, and you want to share it with others. You could make them install LÖVE on their computer, but that is not necassary.
+You made a game, and you want to share it with others. You could make them install LÖVE on their computer, but that is not necessary.
 
 First, we need to change the title and icon. For that we will use a config file.
 
