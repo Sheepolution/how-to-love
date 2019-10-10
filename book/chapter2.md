@@ -58,23 +58,23 @@ pi = 3.141592
 Take a look at the following code:
 
 ```lua
-a = 5
-b = 3
-c = a + b
+X = 5
+Y = 3
+Z = X + Y
 ```
 
-First we say `a = 5`. When we give a variable a value, we call that an *assignment*. We *assign* 5 to `a`, and 3 to `b`. Next we assign `a + b` to `c`. So now `c` equals 8. Remember that you can always check the value of a variable with `print`. If we were to change the value of `a` or `b` after `c = a + b`, it would not affect `c`. It would still be 8.
+First we say `X = 5`. When we give a variable a value, we call that an *assignment*. We *assign* 5 to `X`, and 3 to `Y`. Next we assign `X + Y` to `Z`. So now `Z` equals 8. Remember that you can always check the value of a variable with `print`. If we were to change the value of `X` or `Y` after `Z = X + Y`, it would not affect `Z`. It would still be 8.
 
 ```lua
-a = 5
-b = 3
-c = a + b
-a = 2
-b = 40
-print(c)
+X = 5
+Y = 3
+Z = X + Y
+X = 2
+Y = 40
+print(Z)
 --Output: 8
 ```
-This is because to the computer `c` is not `a + b`, it's simply 8.
+This is because to the computer `Z` is not `X + Y`, it's simply 8.
 
 ___
 ## Strings
@@ -118,7 +118,7 @@ ___
 
 ## Usage
 
-Variables can be used to keep track of things. For example, we can have to variable `coins`, and every time we pick up a coin we can do `coins = coins + 1`.
+Variables can be used to keep track of things. For example, we can have the variable `coins`, and every time we pick up a coin we can do `coins = coins + 1`.
 
 ___
 
