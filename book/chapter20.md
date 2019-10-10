@@ -42,7 +42,7 @@ Here are some of the reasons I can think of for why it's not working.
 * It's shooting the bullets, but it's not drawing them correctly.
 * It's drawing the bullets, but they are in the wrong position.
 
-To figure out wher it goes wrong we can use `print`. For example, let's use `print` inside the for-loop in `love.update` to check the x-position of the circle, and if it even gets there to begin with. Because if the bullets aren't spawning, the `print` will never be reached.
+To figure out where it goes wrong we can use `print`. For example, let's use `print` inside the for-loop in `love.update` to check the x-position of the circle, and if it even gets there to begin with. Because if the bullets aren't spawning, the `print` will never be reached.
 
 
 ```
