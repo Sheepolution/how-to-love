@@ -91,7 +91,7 @@ Our function `sum` *returns* the sum of `a` and `b`. We don't necessarily need t
 ___
 
 ## Usage
-Often you want to execute certain code in multiple locations. Instead of copying that code each time you want to use it, we can simply add a function call. And if we want to change the behaviour of this function, we only need to change it in one location, which is the function itself. This way we avoid repeating code, which is sometimes you should always try to do.
+Often you want to execute certain code in multiple locations. Instead of copying that code each time you want to use it, we can simply add a function call. And if we want to change the behaviour of this function, we only need to change it in one location, which is the function itself. This way we avoid repeating code. [Don't repeat yourself](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), it's one of the most important programming principles.
 
 ___
 
