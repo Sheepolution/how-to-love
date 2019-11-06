@@ -1,5 +1,22 @@
 # Chapter 2 - Variables
-What is a + b?
+With programming we can do arithmetics.
+
+What is 3 + 4?
+
+*It's 7!*
+
+Okay well let's test that. We can use `print` to make the number appear in our output console.
+
+```lua
+print(3 + 4)
+--Output: 7
+```
+
+Run your code (meaning press F6 and then close the window to show the output) and your console should say `7`.
+
+Cool! Now what is a + b?
+
+*Uhm...*
 
 Well it could be anything. That's because "a" and "b" don't have a value. Let's change that.
 
@@ -10,7 +27,7 @@ b = 3
 
 Let's take another look, what is a + b? What we're really asking is "What is the value of a + the value of b?". In other words, what is 5 + 3? Which is 8.
 
-To prove that a + b = 8, we're going to print it. (We're going to use `print` to make the number appear in our output console)
+To prove that a + b = 8, we're going to print it.
 
 ```lua
 a = 5
@@ -19,9 +36,9 @@ print(a + b)
 --Output: 8
 ```
 
-Run your code (meaning press F6 and then close the window to show the output) and your console should say `8` .
+Run your code again.
 
-`a` and `b` are what we call *variables*. A variable is a word in which you can store a value. The number 4 is always 4, and 35 is always 35, but a variable can be anything you want it to be. Hence the name variable.
+Here `a` and `b` are what we call *variables*. A variable is a word in which you can store a value. The number 3 is always 3, and 7 is always 7, but a variable can be anything you want it to be. Hence the name variable.
 
 The word in which you store a value can be almost anything.
 ```lua
