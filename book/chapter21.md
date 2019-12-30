@@ -234,6 +234,7 @@ function love.update(dt)
 		-- Use coins[i] instead of v
 		if checkCollision(player, coins[i]) then
 			table.remove(coins, i)
+			player.size = player.size + 1
 		end
 	end
 end
