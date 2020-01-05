@@ -273,7 +273,9 @@ To serialize the table we're going to use *lume* which is a utility library by *
 
 Click on `lume.lua` and then on Raw, and [copy the code](https://raw.githubusercontent.com/rxi/lume/master/lume.lua).
 
-Go to your text editor, create a new file called `lume.lua` and paste the code. Load it with `require` in `main.lua` at the top of `love.load()`.
+Go to your text editor, create a new file called `lume.lua` and paste the code.
+
+Load it with `lume = require "lume"` at the top of `love.load()` in `main.lua`.
 
 Lume has all kinds of neat functions, but the important ones for this is tutorial are `serialize` and `deserialize`. Let's try it out. Serialize the data table and then print its value.
 
