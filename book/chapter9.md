@@ -31,7 +31,7 @@ require("path.to.example")
 
 Now when you print `test`, after we loaded `example.lua`, you should see it says 20.
 
-`test` in this case is what we call a *global variable*. It's a variable that we can use everywhere in our project. The opposite of a global variable, is a *local variable*. You create a local variable by writing `local` in front of the variable name.
+`test` in this case is what we call a *global variable* (or a *global* for short). It's a variable that we can use everywhere in our project. The opposite of a global variable, is a *local variable* (or *local* for short). You create a local variable by writing `local` in front of the variable name.
 
 ```lua
 --! file: example.lua
@@ -120,13 +120,68 @@ local test
 test = 20
 ```
 
-___
 ## Returning a value
 
-Like functions, files can return a value. If we put `return 10` at the end of `example.lua`, and inside `main.lua` we do `print(require("example"))`, you will see that it prints 10.
+If you add a return statement at the top scope of a file (so not in any function) it will be returned when you use `require` to load the file.
 
+So for example:
+
+```lua
+--! file: example.lua
+local test = 99
+return test
+```
+```lua
+--! file: main.lua
+local hello = require "example"
+print(hello)
+--Ouput: 99
+```
+
+## When and why locals?
+
+The best practice is to always use local variables, and there are multiple reasons for it. First of all Lua is faster with accessing locals than globals. Now this is a very small difference, perhaps not bigger than 0.000001 seconds, but when you use a lot of globals it quickly adds up.
+
+Another reason is that with globals you're more likely to make mistakes. You might accidentally use the same variable twice at different locations, changing the variable to something at location 1 where it won't make sense to have that value at location 2. If you're going to use a variable only in a certain scope then make it local.
+
+In the previous chapter we made a function that creates rectangles. In this function we could have made the variable `rect` local, since we only use it in that function. We still use that rectangle outside the function, but we access it from the table `listOfRectangles` to which we add it.
+
+We don't make `listOfRectangles` local because we use it in multiple functions.
+
+```lua
+function love.load()
+	listOfRectangles = {}
+end
+
+function createRect()
+	local rect = {}
+	rect.x = 100
+	rect.y = 100
+	rect.width = 70
+	rect.height = 90
+	rect.speed = 100
+
+	-- Put the new rectangle in the list
+	table.insert(listOfRectangles, rect)
+end
+```
+
+Though we could still make it local by creating the variable outside of the `love.load` function.
+
+```lua
+-- By declaring it here we can access it every in this file.
+local listOfRectangles = {}
+
+function love.load()
+	-- It's empty so we could remove this function now
+end
+```
+
+So are there moments when it is okay to use globals? People have mixed opinions on this. Some people will tell you never to use locals. I'll tell you that it's fine, especially as a beginner, to use global variables when you need them in multiple files. Similarly to how `love` is a global variable. Just keep in mind that locals are faster.
+
+Note that throughout this tutorial I use a lot of globals, but this is to make the code smaller and easier to explain.
 
 ___
 
 ## Summary
-With `require` we can load other lua-files. When you create a variable you can use it in all files. Unless you create a local variable, which is limited to its scope. Local variables do not affect variables with the same name outside of their scope.
+With `require` we can load other lua-files. When you create a variable you can use it in all files. Unless you create a local variable, which is limited to its scope. Local variables do not affect variables with the same name outside of their scope. Always try use local variables over global variables, as they are faster.
