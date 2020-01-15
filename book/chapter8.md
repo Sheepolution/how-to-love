@@ -138,7 +138,7 @@ tableName.functionName = function ()
 
 end
 
--- Or the more commend way
+-- Or the more common way
 function tableName.functionName()
 
 end
