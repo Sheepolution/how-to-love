@@ -104,10 +104,10 @@ This is what we call a *string*. Because it's a string of characters.
 We can connect strings by using two dots (..)
 ```lua
 name = "Daniel"
-age = "22"
+age = "25"
 text = "Hello, my name is " .. name .. ", and I'm " .. age .. " years old."
 print(text)
---Output: "Hello, my name is Daniel, and I'm 22 years old."
+--Output: "Hello, my name is Daniel, and I'm 25 years old."
 ```
 ___
 
