@@ -197,6 +197,8 @@ function love.draw()
 end
 ```
 
+![](/images/book/18/colors.png)
+
 ## Images
 
 So we can make a colorful level, but now we want to use images. Well that's easy, just add an image, get the width and height, and draw the image instead of a rectangle.
@@ -246,7 +248,7 @@ function love.draw()
 end
 ```
 
-![](/images/book/18/colors_tile.png)
+![](/images/book/18/colors_image.png)
 
 So that's easy. But what if we want to draw different images? Well we could use multiple images, but in the previous chapter we learned how we can draw part of an image with quads. We can use this for tiles as well.
 
