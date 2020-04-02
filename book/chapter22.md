@@ -202,13 +202,13 @@ shakeOffset = {x = 0, y = 0}
 
 ```lua
 -- In love.update(dt)
-if shakeTimer > 0 then
-	shakeTimer = shakeTimer - dt
+if shakeDuration > 0 then
+	shakeDuration = shakeDuration - dt
 	if shakeWait > 0 then
 		shakeWait = shakeWait - dt
+	else
 		shakeOffset.x = love.math.random(-5,5)
 		shakeOffset.y = love.math.random(-5,5)
-	else
 		shakeWait = 0.05
 	end
 end
@@ -218,7 +218,7 @@ end
 function love.draw()
 	love.graphics.push()
 		love.graphics.translate(-player.x + 400, -player.y + 300)
-		if shakeTimer > 0 then
+		if shakeDuration > 0 then
 			love.graphics.translate(shakeOffset.x, shakeOffset.y)
 		end
 		love.graphics.circle("line", player.x, player.y, player.size)
