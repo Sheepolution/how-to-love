@@ -177,7 +177,7 @@ function love.load()
 end
 ```
 
-So are there moments when it is okay to use globals? People have mixed opinions on this. Some people will tell you never to use locals. I'll tell you that it's fine, especially as a beginner, to use global variables when you need them in multiple files. Similarly to how `love` is a global variable. Just keep in mind that locals are faster.
+So are there moments when it is okay to use globals? People have mixed opinions on this. Some people will tell you never to use globals. I'll tell you that it's fine, especially as a beginner, to use global variables when you need them in multiple files. Similarly to how `love` is a global variable. Just keep in mind that locals are faster.
 
 Note that throughout this tutorial I use a lot of globals, but this is to make the code smaller and easier to explain.
 
