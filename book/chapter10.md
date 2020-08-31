@@ -62,7 +62,7 @@ ___
 
 ## Standard libraries
 
-Lua has built-in libraries. These are called *Standard Libraries*. They are the functions that are build into Lua. `print`, for example, is part of the standard library. And so is `table.insert` and `table.remove`.
+Lua has built-in libraries. These are called *Standard Libraries*. They are the functions that are built into Lua. `print`, for example, is part of the standard library. And so is `table.insert` and `table.remove`.
 
 One important standard library we haven't looked at yet is the *math library*. It provides math functions, which can be very useful when making a game.
 
