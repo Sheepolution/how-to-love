@@ -169,7 +169,7 @@ end
 Though we could still make it local by creating the variable outside of the `love.load` function.
 
 ```lua
--- By declaring it here we can access it every in this file.
+-- By declaring it here we can access it everywhere in this file.
 local listOfRectangles = {}
 
 function love.load()
