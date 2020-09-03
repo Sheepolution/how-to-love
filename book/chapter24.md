@@ -459,7 +459,7 @@ We're going to use our box for this. We want to make it so that the player does 
 How about we first check if both parties of the collision want the collision to be resolved. We create a function called `checkResolved`. If both `self` and `e` return `true`, then we continue with resolving the collision.
 
 ```lua
---! file: player.lua
+--! file: entity.lua
 function Entity:resolveCollision(e)
     if self.tempStrength > e.tempStrength then
         return e:resolveCollision(self)
