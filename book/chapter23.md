@@ -188,7 +188,7 @@ function Player:update(dt)
 end
 ```
 
-And we need to call the `resolveCollision()` funciton in `main.lua`.
+And we need to call the `resolveCollision()` function in `main.lua`.
 
 ```lua
 --! file: main.lua
