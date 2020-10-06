@@ -277,7 +277,7 @@ Now that we know this, we need to check from which side they're touching. A simp
 function Entity:resolveCollision(e)
     if self:checkCollision(e) then
         if self:wasVerticallyAligned(e) then
-            if self.x + self.width/2 < e.x + self.width/2  then
+            if self.x + self.width/2 < e.x + e.width/2  then
                 -- pusback = the right side of the player - the left side of the wall
                 local pushback = self.x + self.width - e.x
                 self.x = self.x - pushback
@@ -287,7 +287,7 @@ function Entity:resolveCollision(e)
                 self.x = self.x + pushback
             end
         elseif self:wasHorizontallyAligned(e) then
-            if self.y + self.height/2 < e.y + self.height/2 then
+            if self.y + self.height/2 < e.y + e.height/2 then
                 -- pusback = the bottom side of the player - the top side of the wall
                 local pushback = self.y + self.height - e.y
                 self.y = self.y - pushback
