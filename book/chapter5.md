@@ -33,9 +33,9 @@ end
 
 The second and third argument of this function are the x and y position.
 
-x means "horizontal position on the screen". 0 is the left of the screen.
+x means "horizontal position on the screen". 0 is the left side of the screen.
 
-y means "vertical position on the screen". 0 is the top of the screen.
+y means "vertical position on the screen". 0 is the top side of the screen.
 
 ![](/images/book/5/coordinates.png)
 
@@ -57,7 +57,7 @@ So now the x-position of our rectangle is the value of `x`.
 
 Note that the variable name `x` is just a name. We could've named it `icecream` or `unicorn` or whatever. Functions don't care about variable names, it only cares about its value.
 
-Now we want to make the rectangle move. We do this in love.update. Every update we want to increase `x` by 5. In other words, `x` needs to be value of `x` + 5. And that's exactly how we write.
+Now we want to make the rectangle move. We do this in love.update. Every update we want to increase `x` by 5. In other words, `x` needs to be value of `x` + 5. And that's exactly how we write it.
 
 ```lua
 function love.update()
