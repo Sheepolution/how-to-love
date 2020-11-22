@@ -9,7 +9,7 @@ For this tutorial we need two things: A player that can walk in 4 directions, an
 So we have the following files:
 
 * main.lua
-* payer.lua
+* player.lua
 * wall.lua
 * entity.lua
 * classic.lua
