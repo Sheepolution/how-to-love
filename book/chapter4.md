@@ -78,7 +78,7 @@ So: love.load -> love.update -> love.draw -> love.update -> love.draw -> love.up
 
 Behind the scenes, LÖVE calls these functions, and we to create them, and fill them with code. This is what we call a *callback*.
 
-LÖVE is made out of *modules*, love.graphics, love.audio, love.filesystem. There are about 15 modules, and each module focusses on 1 thing. Everything that you draw is done with love.graphics. And anything with sound is done with love.audio.
+LÖVE is made out of *modules*, love.graphics, love.audio, love.filesystem. There are about 15 modules, and each module focuses on 1 thing. Everything that you draw is done with love.graphics. And anything with sound is done with love.audio.
 
 For now, let's focus on love.graphics.
 

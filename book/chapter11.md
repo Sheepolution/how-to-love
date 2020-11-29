@@ -110,7 +110,7 @@ When you run the game you'll see a moving rectangle.
 
 So we created a class called `Rectangle`. We create an instance of that class called `r1`. So now `r1` has the functions `update` and `draw`. We call these functions, and as first argument we pass the instance itself, `r1`. This is what `self` becomes in the functions.
 
-It's kind of annoying though, how we have to pass `r1` everytime we call one of its functions. Luckily, Lua has a shorthand for this. When we use a colon (:), the function-call will automatically pass the object left of the colon as first argument.
+It's kind of annoying though, how we have to pass `r1` every time we call one of its functions. Luckily, Lua has a shorthand for this. When we use a colon (:), the function-call will automatically pass the object left of the colon as first argument.
 
 ```lua
 --! file: main.lua
@@ -157,7 +157,7 @@ function Rectangle:draw()
 end
 ```
 
-We call this [*Syntatic sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar)
+We call this [*Syntactic sugar*](https://en.wikipedia.org/wiki/Syntactic_sugar)
 
 Let's add some parameters to `Rectangle:new()`
 

@@ -18,14 +18,14 @@ function example()
 end
 ```
 
-You start by writing the keyword `function`, followed by the name of the function. A function is a type of variable, so the same rules apply as when you name a variable. This function's name is `example`. After the name we put parantheses `()`. Now we can start typing the code we want to put inside our function. In this case, we put in `print("Hello World!")` When you're done you close the function with an `end`.
+You start by writing the keyword `function`, followed by the name of the function. A function is a type of variable, so the same rules apply as when you name a variable. This function's name is `example`. After the name we put parentheses `()`. Now we can start typing the code we want to put inside our function. In this case, we put in `print("Hello World!")` When you're done you close the function with an `end`.
 
 Note that when you run the code, you'll see no "Hello World!" in your console, this is because we still have to execute the function. We execute a function like this:
 ```lua
 example()
 --Output: "Hello World!"
 ```
-You simply type the function's name, followed by parantheses. This is what we call a *function-call*.
+You simply type the function's name, followed by parentheses. This is what we call a *function-call*.
 
 ___
 
@@ -51,9 +51,9 @@ print(num)
 ```
 
 
-Inside the parantheses of the function we can put what we call *parameters*. Parameters are temporary variables that only exist inside the function. In this case we place the parameter `num`. And now we can use `num` like any other variable.
+Inside the parentheses of the function we can put what we call *parameters*. Parameters are temporary variables that only exist inside the function. In this case we place the parameter `num`. And now we can use `num` like any other variable.
 
-We execute our function multiple times, each time with a different number. And thus each time we print the same sentence, but with a different number. The number we put inside the parantheses is what we call an argument. So in the first function-call, we *pass* the *argument* 15 to the *parameter* `num`.
+We execute our function multiple times, each time with a different number. And thus each time we print the same sentence, but with a different number. The number we put inside the parentheses is what we call an argument. So in the first function-call, we *pass* the *argument* 15 to the *parameter* `num`.
 
 At the end of our code we print `num`, outside of our function. This gives us `nil`. This means that num has no value. It's not a number, or string, or function. It's nothing. Because like I said before, parameters are variables that are only available inside the function.
 
@@ -96,4 +96,4 @@ Often you want to execute certain code in multiple locations. Instead of copying
 ___
 
 ## Summary
-Functions can store code that we can execute at any time. We call a function by writing its name followed by parantheses. We can put values inside these parantheses. These values are passed to the function's parameters, which are temporary variables that only exist within the function. Functions can also return a value. Functions remove repetition and that is a good thing.
+Functions can store code that we can execute at any time. We call a function by writing its name followed by parentheses. We can put values inside these parentheses. These values are passed to the function's parameters, which are temporary variables that only exist within the function. Functions can also return a value. Functions remove repetition and that is a good thing.

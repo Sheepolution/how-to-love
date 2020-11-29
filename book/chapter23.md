@@ -611,7 +611,7 @@ function Entity:resolveCollision(e)
 end
 ```
 
-Now we want to make it so that it keeps checking collision as long as there has been collision resolved. For this we can use a *while-loop*. This keeps looping as long as the statement is true. Careful though! If you use a while-loop the wrong way, it can create an endless loop and it will crash your game. Because of this, let's also add a limit to the number of loops. It just might happen that in a weird occassion we keep getting collision somehow and we get stuck in an inifite loop. It's better to be safe. If after a 100 loops there is still collision we break the while-loop.
+Now we want to make it so that it keeps checking collision as long as there has been collision resolved. For this we can use a *while-loop*. This keeps looping as long as the statement is true. Careful though! If you use a while-loop the wrong way, it can create an endless loop and it will crash your game. Because of this, let's also add a limit to the number of loops. It just might happen that in a weird occasion we keep getting collision somehow and we get stuck in an infinite loop. It's better to be safe. If after a 100 loops there is still collision we break the while-loop.
 
 ```lua
 --! file:main.lua

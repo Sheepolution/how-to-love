@@ -96,7 +96,7 @@ function love.update(dt)
 end
 ```
 
-Delta time is the time that has passed between the previous and the current update. So on computer A, wich runs with 100 fps, delta time on average would be 1 / 100, which is 0.01.
+Delta time is the time that has passed between the previous and the current update. So on computer A, which runs with 100 fps, delta time on average would be 1 / 100, which is 0.01.
 
 On computer B, delta time would be 1 / 200, which is 0.005.
 

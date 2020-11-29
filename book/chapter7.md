@@ -179,7 +179,7 @@ function love.load()
 end
 ```
 
-When you run the game you'll see that banana is no longer drawn, and that pear and pinapple have moved up.
+When you run the game you'll see that banana is no longer drawn, and that pear and pineapple have moved up.
 
 ![](/images/book/7/shift.png)
 

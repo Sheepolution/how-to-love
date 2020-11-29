@@ -1,5 +1,5 @@
 # Chapter 20 - Debugging
-A bug is something that goes wrong in a program (or in our case game). Debugging is the art of fixing these bugs so that they don't occure anymore. As a programmer it's only natural to encounter lots of bugs, so debugging is a very valuable skill to have.
+A bug is something that goes wrong in a program (or in our case game). Debugging is the art of fixing these bugs so that they don't occur anymore. As a programmer it's only natural to encounter lots of bugs, so debugging is a very valuable skill to have.
 
 I wrote a short game.
 
@@ -176,7 +176,7 @@ Upon running this I get the following error:
 
 ![](/images/book/20/error4.png)
 
-"Attempt to index" means it tried to find a property of something. So in this case it tried to find the property `x` on the variable `self`. But according to the error, `self` is a number value, so it can't do that. So how did this happen? We use a colon (:) for our function so that it automatically has `self` as first parameter, and we call the function with a colon so that it passes `self` as first argument. But aparently somewhere something went wrong. To know where it went wrong, we can use the Traceback.
+"Attempt to index" means it tried to find a property of something. So in this case it tried to find the property `x` on the variable `self`. But according to the error, `self` is a number value, so it can't do that. So how did this happen? We use a colon (:) for our function so that it automatically has `self` as first parameter, and we call the function with a colon so that it passes `self` as first argument. But apparently somewhere something went wrong. To know where it went wrong, we can use the Traceback.
 
 The bottom part of the error tells us the "path" it took before reaching the error. It's read from down to top. You can ignore the `xpcall` line. The next line says `main.lua:21: in function 'draw'`. Interesting, let's take a look. Ah yes, I see. On line 21 I used a dot instead of a colon (`circle.draw(140)`). I changed it to a colon and now it works!
 
@@ -282,7 +282,7 @@ ___
 
 ## Rubber duck debugging
 
-You could also get a rubber duck. There's this thing called [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging). The idea is that when you explain what you're doing in your code, you oftend realize what you're doing wrong and fix the bug yourself. So instead of explaining it to someone, you explain it to your rubber duck. I have rubber duck myself, his name is Hendrik!
+You could also get a rubber duck. There's this thing called [rubber duck debugging](https://en.wikipedia.org/wiki/Rubber_duck_debugging). The idea is that when you explain what you're doing in your code, you often realize what you're doing wrong and fix the bug yourself. So instead of explaining it to someone, you explain it to your rubber duck. I have rubber duck myself, his name is Hendrik!
 
 ![](/images/book/20/hendrik.png)
 
