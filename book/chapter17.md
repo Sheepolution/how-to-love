@@ -300,7 +300,7 @@ Our first frame could end up like this:
 ![](/images/book/17/bleeding.png)
 
 It's kind of technical why this happens, but the fact is that it does happen. Luckily, we can solve this issue by adding a 1 pixel border around our frame. 
-Either of the same color as the actualy border, or with transparency.
+Either of the same color as the actually border, or with transparency.
 
 ![](/images/book/17/bleeding_fix.png)
 

@@ -65,7 +65,7 @@ The green house is on the 2nd row on the 5th column.
 
 The red house is on the 3rd row on the 2nd column.
 
-With 2D tables we acces the values like this:
+With 2D tables we access the values like this:
 
 `tilemap[4][3]`
 
@@ -450,7 +450,7 @@ end
 When you run the game you should be able to walk around with your player. But the problem is that he can walk through walls. Let's fix this by checking if the position he wants to go to is a wall.
 
 
-First make a function called `isEmpty`. Inside we return wether the value on the coordinates equals 0.
+First make a function called `isEmpty`. Inside we return whether the value on the coordinates equals 0.
 
 ```lua
 function isEmpty(x, y)

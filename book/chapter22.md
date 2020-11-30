@@ -474,7 +474,7 @@ function drawGame()
 end
 ```
 
-Now we have a split screen. The only problem is that both the left and the right screen focus on player 1. We need to make it so that the camera focusses on player 2 the second time we draw. We can fix this by adding a `focus` parameter to `drawGame`, and have the camera focus on what we pass as argument, which will be the players.
+Now we have a split screen. The only problem is that both the left and the right screen focus on player 1. We need to make it so that the camera focuses on player 2 the second time we draw. We can fix this by adding a `focus` parameter to `drawGame`, and have the camera focus on what we pass as argument, which will be the players.
 
 ```lua
 function love.draw()
