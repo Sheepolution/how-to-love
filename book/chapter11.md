@@ -234,7 +234,19 @@ end
 
 Our baseclass `Shape` now handles the movement. I should point out that *baseclass* is just a term. "A is a baseclass of B". A baseclass is still the same like any other class. It's just different in how we use it.
 
-Anyway, now that we have a baseclass that handles our movement, we can make `Rectangle` an extension of `Shape`, and remove its updater.
+Anyway, now that we have a base class that handles our movement, we can make `Rectangle` an extension of `Shape`, and remove its updater. Make sure to require `shape` before using it.
+
+```lua
+--! file: main.lua
+
+function love.load()
+	Object = require "classic"
+	require "shape"
+	require "rectangle"
+	r1 = Rectangle()
+	r2 = Rectangle()
+end
+```
 
 ```lua
 --! file: rectangle.lua
