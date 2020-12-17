@@ -8,7 +8,7 @@ First, you'll need some images:
 
 ![](/images/book/17/jump1.png), ![](/images/book/17/jump2.png), ![](/images/book/17/jump3.png), ![](/images/book/17/jump4.png) and ![](/images/book/17/jump5.png)
 
-You can also download them as a zip [here](https://www.dropbox.com/s/22nl1ybqhvan2j3/jump.zip?dl=1)
+You can also download them as a zip [here](https://drive.google.com/file/d/1bMVMUv-B0XF9nBJfw_7ek781cmUjrdgn/view?usp=sharing)
 
 Load the images and put them in a table.
 
