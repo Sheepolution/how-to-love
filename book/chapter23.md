@@ -4,7 +4,7 @@ In chapter 13 we talked about how we can detect collision. In this chapter we ta
 
 Before we start, I want to tell you that resolving collision is very hard, and it's something that even professionals have trouble dealing with. Look at speedruns for example. There are a lot of glitches where you are able to clip through walls and such. The collision we're going to make is pretty solid but far from perfect. And don't feel bad if you have a hard time understanding what we're doing here.
 
-For this tutorial we need two things: A player that can walk in 4 directions, and some walls. Let's create a baseclass for both of these. An Entity class.
+For this tutorial we need two things: A player that can walk in 4 directions, and some walls. Let's create a base class for both of these. An Entity class.
 
 So we have the following files:
 
@@ -106,7 +106,7 @@ Okay now let's create this objects in main.lua
 function love.load()
     -- First require classic, since we use it to create our classes.
     Object = require "classic"
-    -- Second require Entity, since it's the baseclass for our other classes.
+    -- Second require Entity, since it's the base class for our other classes.
     require "entity"
     require "player"
     require "wall"
@@ -168,7 +168,7 @@ end
 -------------
 ```
 
-We need to call the baseclass function in our Player class to make this work.
+We need to call the base class function in our Player class to make this work.
 
 ```lua
 --! file: player.lua

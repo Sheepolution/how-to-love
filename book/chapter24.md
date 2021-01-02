@@ -509,7 +509,7 @@ function Entity:checkResolve(e, direction)
 end
 ```
 
-Now in `player.lua` we can override the function `checkResolve(e, direction)`. With classic, the class library we're using, every class has the function `is:(class)` which can be used to check if an instance of a class is of a certain type of class. So we can use `e:is(Box)` to check if `e` is of the type `Box`. This also works with baseclasses. So if `e` were to be a box, then `e:is(Entity)` would return `true`, since `Box` is an extension of the baseclass `Entity`.
+Now in `player.lua` we can override the function `checkResolve(e, direction)`. With classic, the class library we're using, every class has the function `is:(class)` which can be used to check if an instance of a class is of a certain type of class. So we can use `e:is(Box)` to check if `e` is of the type `Box`. This also works with base classes. So if `e` were to be a box, then `e:is(Entity)` would return `true`, since `Box` is an extension of the base class `Entity`.
 
 We first check if we're colliding with a `Box`, and if so, we check if the `direction` is `"bottom"`. If so, return `true` (meaning we want collision to be resolved), else return `false`. 
 

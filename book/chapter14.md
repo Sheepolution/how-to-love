@@ -34,7 +34,7 @@ end
 
 Let's start with the player. Create a new file called `player.lua`.
 
-We could make a baseclass for all our objects, but because it's such a short simple game we'll do without one. Though I encourage you to improve the code at the end of this chapter by adding a baseclass yourself.
+We could make a base class for all our objects, but because it's such a short simple game we'll do without one. Though I encourage you to improve the code at the end of this chapter by adding a base class yourself.
 
 ___
 
