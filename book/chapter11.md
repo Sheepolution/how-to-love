@@ -258,6 +258,10 @@ function Rectangle:new(x, y, width, height)
 	self.height = height
 end
 
+function Rectangle:update(dt)
+	Rectangle.super.update(self, dt)
+end
+
 function Rectangle:draw()
 	love.graphics.rectangle("line", self.x, self.y, self.width, self.height)
 end
@@ -267,7 +271,7 @@ With `Rectangle = Shape:extend()` we made `Rectangle` an extension of `Shape`.
 
 `Shape` has its own function called `:new()`. By creating `Rectangle:new()`, we override the original function. Meaning that when we call `Rectangle()`, it will not execute `Shape:new()` but instead `Rectangle:new()`.
 
-But rectangle has the property `super`, which is the class `Rectangle` is extended from. With `Rectangle.super` we can get access to our base class's functions, and we use it to call `Shape:new()`.
+But rectangle has the property `super`, which is the class `Rectangle` is extended from. With `Rectangle.super` we can get access to our base class's functions, and we use it to call `Shape:new()`. And also we need to call the shape's update function.
 
 We have to pass `self` as first argument ourselves, and can't let Lua handle it with a colon (:), because we're not calling the function as the instance.
 
@@ -283,6 +287,9 @@ function Circle:new(x, y, radius)
 	self.radius = radius
 end
 
+function Circle:update(dt)
+	Circle.super.update(self, dt)
+end
 
 function Circle:draw()
 	love.graphics.circle("line", self.x, self.y, self.radius)
@@ -313,6 +320,17 @@ function love.load()
 	--We make r2 a Circle instead of a Rectangle
 	r2 = Circle(350, 80, 40)
 end
+
+function love.update(dt)
+	r1:update(dt)
+	r2:update(dt)
+end
+
+function love.draw()
+	r1:draw()
+	r2:draw()
+end
+
 ```
 
 Now when you run the game you'll see a moving rectangle and a moving circle.
