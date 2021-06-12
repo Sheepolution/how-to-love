@@ -115,20 +115,18 @@ function checkCollision(a, b)
 	local b_bottom = b.y + b.height
 
 	--If Red's right side is further to the right than Blue's left side.
-	if a_right > b_left and
+	return  a_right > b_left
 	--and Red's left side is further to the left than Blue's right side.
-	a_left < b_right and
+		and a_left < b_right
 	--and Red's bottom side is further to the bottom than Blue's top side.
-	a_bottom > b_top and
+		and a_bottom > b_top
 	--and Red's top side is further to the top than Blue's bottom side then..
-	a_top < b_bottom then
-		--There is collision!
-		return true
-	else
-		--If one of these statements is false, return false.
-		return false
-	end
-end
+		and a_top < b_bottom
+	--There's a collision!
+	
+	--Notice that the entire statement after return is a boolean value
+	--It will return true if a collision happens
+	--If one of the conditions is false, it will return false
 ```
 
 Okay, we have our function. Let's try it out! We draw the rectangles filled or lined based on  
