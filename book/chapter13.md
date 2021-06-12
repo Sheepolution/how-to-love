@@ -123,8 +123,8 @@ function checkCollision(a, b)
 	--and Red's top side is further to the top than Blue's bottom side then..
 		and a_top < b_bottom
 	--There's a collision!
-	
-	--Notice that the entire statement after return is a boolean value
+
+	--Notice that the entire expression after return is a boolean value
 	--It will return true if a collision happens
 	--If one of the conditions is false, it will return false
 ```
