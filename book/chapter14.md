@@ -407,10 +407,10 @@ function Bullet:checkCollision(obj)
     local obj_top = obj.y
     local obj_bottom = obj.y + obj.height
 
-    if self_right > obj_left and
-    self_left < obj_right and
-    self_bottom > obj_top and
-    self_top < obj_bottom then
+    if  self_right > obj_left
+    and self_left < obj_right
+    and self_bottom > obj_top
+    and self_top < obj_bottom then
         self.dead = true
 
         --Increase enemy speed
