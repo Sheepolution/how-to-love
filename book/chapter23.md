@@ -42,8 +42,7 @@ And let's add collision detection. Do you still know how to do it and why it wor
 ```lua
 function Entity:checkCollision(e)
     -- e will be the other entity with which we check if there is collision.
-    -- This is the compact version.
-    -- This is one action (return), but spread over multiple lines.
+    -- This is the final compact version from chapter 13
     return self.x + self.width > e.x
     and self.x < e.x + e.width
     and self.y + self.height > e.y
