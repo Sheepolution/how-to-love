@@ -144,7 +144,7 @@ end
 
 And now it finally works. We can shoot bullets!
 
-Let's look some new code where I create an circle class, and draw it a few times (you don't necessarily have to write along).
+Let's look at some new code where I create a circle class, and draw it a few times (you don't necessarily have to write along).
 
 ```lua
 Object = require "classic"
