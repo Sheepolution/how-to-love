@@ -274,7 +274,7 @@ For example:
 * Show the code of where (you think) it goes wrong.
 * Share the .love file so that other people can try it out themselves.
 
-But before you ask for help you may want to search for you question. It just might be that it's a common question and it has been answered multiple times.
+But before you ask for help you may want to search for your question. It just might be that it's a common question and it has been answered multiple times.
 
 And remember, no one is obligated to help you, and the ones that do all do it for free, so be kind :)
 
