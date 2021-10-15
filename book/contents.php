@@ -1,5 +1,5 @@
 <h2 class="line"><span>Table of Contents</span></h2>
-<div class="contents"">
+<div class="contents">
 	<ul class="chapters">
 		<li>
 			<a href="/learn/book/0">Introduction</a>
@@ -75,6 +75,14 @@
 		</li>
 		<li>
 			<a href="/learn/book/24">Chapter 24 - Platformer</a>
+		</li>
+	</ul>
+</div>
+<h2 class="line"><span>Bonus chapters</span></h2>
+<div class="contents">
+	<ul class="chapters">
+		<li>
+			<a href="/learn/book/bonus/vscode">Visual Studio Code</a>
 		</li>
 	</ul>
 </div>
