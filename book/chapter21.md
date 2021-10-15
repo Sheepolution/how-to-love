@@ -334,7 +334,7 @@ function love.keypressed(key)
 end
 ```
 
-Run the game, grab some coins and press F1. Just like that we made our first save file! So where is it? If you're on Windows it's saved in `AppData\Roaming\LOVE\`. You can get to the hidden AppData folder by pressing Ctrl + R, followed by typing *"appdata"* and click on OK. There should be a folder that has the same name as the folder your LÖVE project is in. And in that folder you will find a file named `savedata.txt`. If you open the file you'll see that you're table is inside.
+Run the game, grab some coins and press F1. Just like that we made our first save file! So where is it? If you're on Windows it's saved in `AppData\Roaming\LOVE\`. You can get to the hidden AppData folder by pressing Ctrl + R, followed by typing *"appdata"* and click on OK. Then go to Roaming and then to LOVE. There should be a folder that has the same name as the folder your LÖVE project is in. And in that folder you will find a file named `savedata.txt`. If you open the file you'll see that your table is inside.
 
 Now let's make it so that we can load our data.
 
