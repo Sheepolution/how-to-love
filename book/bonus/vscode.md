@@ -1,16 +1,16 @@
-# Sheepolution's Guide for Optimizing Visual Studio Code for LÖVE
+# Visual Studio Code
 
-## Visual Studio Code
+Visual Studio Code is a code editor by Microsoft with lots of features. In this chapter we go over some extensions and tricks to optimize the editor for making LÖVE games.
 
-Install Visual Studio Code https://code.visualstudio.com/
+[Install Visual Studio Code](https://code.visualstudio.com/)
 
 ## Extensions
 
 Install the following extensions:
 
-- Lua by sumneko https://marketplace.visualstudio.com/items?itemName=sumneko.lua
+- [Lua by sumneko](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
 
-- Local Lua Debugger by Tom Blind https://marketplace.visualstudio.com/items?itemName=tomblind.local-lua-debugger-vscode
+- [Local Lua Debugger by Tom Blind](https://marketplace.visualstudio.com/items?itemName=tomblind.local-lua-debugger-vscode)
 
 ### Lua
 
@@ -84,12 +84,14 @@ if arg[2] == "debug" then
 end
 ```
 
-Now you have two ways to launch LÖVE.
+You can press F5 to start the launcher. You can select which launcher you want to use in Run and Debug. You now have two ways to launch LÖVE:
 
 - With **Debug** you can debug your game. In a Lua file click on the left of a line-number to create a *break point* (and click again to remove it). When your code is at this line the debugger will stop there, and allow you to examine variables. ![debugging](/images/book/bonus/vscode/debugging.png)
 - With **Release** you don't have a debugger. The reason you keep these separated is so that you don't have to remember to remove the `lldebugger` line whenever you want to distribute the game.
 
-We can improve the debugger by making it highlight an error when we get one. For this we will need to edit `love.errorhandler`. LÖVE catches the error show the nice error screen, but we want it to actually throw an error. At the bottom of `main.lua` add the following code:
+We can improve the debugger by making it highlight an error when we get one. For this we will need to edit `love.errorhandler`. LÖVE catches the error to show the nice error screen, but we want it to actually throw an error.
+
+At the bottom of `main.lua` add the following code:
 
 ```lua
 local love_errorhandler = love.errhand
@@ -106,7 +108,7 @@ Now when you get an error in Debug mode Visual Studio Code will jump to the file
 
 ![error](/images/book/bonus/vscode/error.png)
 
-You might notice that your game slows down a lot in Debug mode. Because of this I add another launcher called **Test**. Add this configuration to your `launch.json`
+You might notice that your game slows down a lot in Debug mode. Because of this I add another launcher called **Test**. Add this configuration to your `launch.json`:
 
 ```json
 {
@@ -155,16 +157,15 @@ Now we want to make it easy to build our project.
 
 ### makelove
 
-We use the builder makelove https://github.com/pfirsich/makelove/.
+We use the builder [makelove](https://github.com/pfirsich/makelove/).
 
-1. Install Python https://www.python.org/downloads/ (if you do a custom installation make sure to install `pip`).
+1. Install [Python](https://www.python.org/downloads/) (if you do a custom installation make sure to install `pip`).
 2. Open a terminal (e.g. Windows Powershell) and type `pip3 install makelove`.
 3. In your game's folder (where you have your main.lua) create a file called `make_all.toml` and add the following:
 ```ini
 name = "Game"
 default_targets = ["win32", "win64", "macos"]
 build_directory = "bin"
-
 love_files = [
     "+*",
     "-*/.*",
