@@ -41,7 +41,7 @@ Add the folder where `love.exe` is located to your environment variables. In Win
 
 Now we are going to add two launchers. Note that the following approach is not necessarily the *best*. This is a personal preference.
 
-Go to Run and Debug (play button with a bug on the left). Click on `creat a launch.json file`.
+Go to Run and Debug (play button with a bug on the left). Click on `create a launch.json file`.
 
 Replace the contents of the new file with this:
 
@@ -149,7 +149,7 @@ function love.errorhandler(msg)
 	end
 end
 ```
-This way you still get the highlighted error, but are not slowed down by the debug mode. You can also expand on this, like showing information. You can also expand on this, like showing debug information on screen when `launch_type == "test" or launch_type == "debug"`.
+This way you still get the highlighted error, but are not slowed down by the debug mode. You can also expand on this, like showing debug information on screen when `launch_type == "test" or launch_type == "debug"`.
 
 ## Building
 
