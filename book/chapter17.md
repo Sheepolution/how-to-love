@@ -263,8 +263,8 @@ function love.load()
 end
 ```
 
-So in the first iteration of the outer for-loop, i equals 0, and j equals 0, then 1, then 2 and finally 3.
-In the second iteration, i equals 1, and j again equals 0, then 1, then 2 and finally 3.
+So in the first iteration of the outer for-loop, i equals 0, and j equals 0, then 1 and finally 2.
+In the second iteration, i equals 1, and j again equals 0, then 1 and finally 2.
 
 You might notice that we have an extra, empty quad. This isn't really a big deal since we only draw the first 5 quads, but we can do something like this to prevent it
 
