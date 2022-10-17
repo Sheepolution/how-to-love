@@ -108,48 +108,9 @@ Now when you get an error in Debug mode Visual Studio Code will jump to the file
 
 ![error](/images/book/bonus/vscode/error.png)
 
-You might notice that your game slows down a lot in Debug mode. Because of this I add another launcher called **Test**. Add this configuration to your `launch.json`:
+You might notice that your game slows down a lot in Debug mode. This only happens when you have break points, so remember to disable those if you don't use them.
 
-```json
-{
-    "type": "lua-local",
-    "request": "launch",
-    "name": "Test",
-    "program": {
-        "command": "love"
-    },
-    "args": [
-        ".",
-        "test"
-    ],
-},
-```
-
-Change the lines where you require `lldebugger` to this:
-```lua
-local launch_type = arg[2]
-if launch_type == "test" or launch_type == "debug" then
-    require "lldebugger"
-
-    if launch_type == "debug" then
-        lldebugger.start()
-    end
-end
-```
-And add this line in your `love.errorhandler`.
-```lua
-local love_errorhandler = love.errhand
-
-function love.errorhandler(msg)
-	if lldebugger then
-        lldebugger.start() -- Add this
-		error(msg, 2)
-	else
-		return love_errorhandler(msg)
-	end
-end
-```
-This way you still get the highlighted error, but are not slowed down by the debug mode. You can also expand on this, like showing debug information on screen when `launch_type == "test" or launch_type == "debug"`.
+You can also expand on this, like showing debug information on screen when `launch_type == "debug"`.
 
 ## Building
 
