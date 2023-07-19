@@ -52,11 +52,17 @@ x = 10 --Assign 10 to x
 x == 10 --Compare 10 to x
 ```
 
-We can also use `>=` and `<=` to check if values are higher and equal or lower and equal to each other.
+We can also use `>=` and `<=` to check if values are higher or equal to each other or if the values are lower and equal to each other.
 
 ```lua
 10 <= 10 --true, 10 equals to 10
 15 >= 4 --true, 15 is higher than 4
+```
+
+So the code above is a shorthand for
+```lua
+10 == 10 or 10 < 10
+15 == 4 or 15 > 4
 ```
 
 ## Boolean
