@@ -127,6 +127,7 @@ function checkCollision(a, b)
 	else
 		--If one of these statements is false, return false.
 		return false
+	end
 end
 ```
 
