@@ -94,7 +94,7 @@ We can improve the debugger by making it highlight an error when we get one. For
 At the bottom of `main.lua` add the following code:
 
 ```lua
-local love_errorhandler = love.errhand
+local love_errorhandler = love.errorhandler
 
 function love.errorhandler(msg)
 	if lldebugger then
