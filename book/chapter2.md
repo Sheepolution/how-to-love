@@ -58,7 +58,7 @@ are three different variables, with each their own value.
 
 You can do more than just summing up numbers.
 ```lua
-a = 20 - 10 --Substraction
+a = 20 - 10 --Subtraction
 b = 20 * 10 --Multiplication
 c = 20 / 10 --Division
 d = 20 ^ 10 --Exponentiation
