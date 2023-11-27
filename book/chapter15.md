@@ -56,7 +56,7 @@ ___
 
 ## Castle
 
-[Castle](https://castle.games/) is a client that allows you to easily share your LÖVE games. Check it out!
+[Castle](https://castle.xyz/) is a client that allows you to easily share your LÖVE games. Check it out!
 
 ___
 
