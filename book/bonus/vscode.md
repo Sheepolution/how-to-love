@@ -4,6 +4,10 @@ Visual Studio Code is a code editor by Microsoft with lots of features. In this 
 
 [Install Visual Studio Code](https://code.visualstudio.com/)
 
+## Template
+
+Check out Keyslam's [LÖVE VSCode Game Template](https://github.com/Keyslam/LOVE-VSCode-Game-Template) for a template. This tutorial does not use the template, but explains how you can manually add and configure the extensions that you can also find in the template.
+
 ## Extensions
 
 Install the following extensions:
