@@ -24,9 +24,11 @@ When LÖVE is done installing, click on *Finish*.
 
 ___
 
-## ZeroBrane Studio
+## Code editor
 
 Now we need to install a text editor. We're going to use ZeroBrane Studio in this tutorial.
+
+If you use **Visual Studio Code**, check out the [extra chapter](vscode) to learn how to run LÖVE in Visual Studio Code.
 
 Go to [studio.zerobrane.com](https://studio.zerobrane.com/), and click on "Download".
 
@@ -99,6 +101,6 @@ ___
 
 ## Alternative text editors
 
-* [Atom](https://love2d.org/wiki/Atom)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Sublime Text](https://love2d.org/wiki/Sublime_Text)
+* [Atom](https://love2d.org/wiki/Atom)
