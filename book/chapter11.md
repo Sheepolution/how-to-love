@@ -345,8 +345,107 @@ That was a lot of information for 1 chapter, and I can imagine if you're having 
 
 ___
 
+## Doing it properly
+
+In this tutorial I use globals to make things easier. However, a more proper way would be to use locals.
+
+We do this by changing the class in two ways.
+
+1. We make the class a local variable in the file.
+2. We return the variable at the end of the file.
+
+So here's how we would change shape.lua
+
+```lua
+--! file: shape.lua
+local Shape = Object:extend()
+
+function Shape:new(x, y)
+	self.x = x
+	self.y = y
+	self.speed = 100
+end
+
+
+function Shape:update(dt)
+	self.x = self.x + self.speed * dt
+end
+
+return Shape
+```
+
+Then inside the other files of the classes, we require the shape file, and pass its value onto a variable. Just like how we do with classic.
+
+```lua
+--! file: rectangle.lua
+--We could name our variable anything we want here, but it's nice to keep a consistent name.
+local Shape = require "shape.lua"
+
+--Let's also make rectangle local.
+local Rectangle = Shape:extend()
+
+function Rectangle:new(x, y, width, height)
+	Rectangle.super.new(self, x, y)
+	self.width = width
+	self.height = height
+end
+
+function Rectangle:draw()
+	love.graphics.rectangle("line", self.x, self.y, self.width, self.height)
+end
+
+-- And then return it.
+return Rectangle
+```
+
+Finally, in main.lua, we can also create a local variable.
+
+```lua
+--! file: main.lua
+
+function love.load()
+	Object = require "classic"
+	--We no longer need to require shape here.
+
+	local Rectangle require "rectangle"
+
+	local Circle = require "circle"
+
+	r1 = Rectangle(100, 100, 200, 50)
+
+	r2 = Circle(350, 80, 40)
+end
+```
+
+We could also move `Object = require "classic"` to `shape.lua`, and make it a local as well. `r1` and `r2` could also be made local variables. but they will need to be made outside of the `love.load`.
+
+```lua
+--! file: main.lua
+
+--By making these variables r1 and r2 are no longer local
+local r1, r2
+
+function love.load()
+	Object = require "classic"
+
+	local Rectangle require "rectangle"
+
+	local Circle = require "circle"
+
+	r1 = Rectangle(100, 100, 200, 50)
+
+	r2 = Circle(350, 80, 40)
+end
+```
+
+This might seem like a lot of extra work for the same result, but your code will be much cleaner. Imagine creating a game with a global `score` variable, but in your game is also a minigame with its own score system. By accident you could override the global `score` variable, and you end up confused why your score is not working properly. Globals can still be used, but use them sparingly.
+
+___
+
 ## Summary
 
 Classes are like blueprints. We can create multiple objects out of 1 class. To simulate classes we use the library classic. You create a class with `ClassName = Object:extend()`. You create an instance of a class with `instanceName = ClassName()`. This will call the function `ClassName:new()`. This is called the *constructor*. Every function of a class should start with the parameter `self` so that when calling the function you can pass the instance as first argument. `instanceName.functionName(instanceName)`. We can use colons (:) to make Lua do this for us.
 
 We can extend a class with `ExtensionName = ClassName:extend()`. This makes `ExtensionName` a copy of `ClassName` that we can add properties to without editing `ClassName`. If we give `ExtensionName` a function that `ClassName` already has, we can still call the original function with `ExtensionName.super.functionName(self)`.
+
+By using local variables, our code will be much cleaner and easier to maintain.
