@@ -422,7 +422,7 @@ We could also move `Object = require "classic"` to `shape.lua`, and make it a lo
 ```lua
 --! file: main.lua
 
---By making these variables r1 and r2 are no longer local
+--By making these variables r1 and r2 are no longer global.
 local r1, r2
 
 function love.load()
