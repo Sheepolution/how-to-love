@@ -5,6 +5,9 @@ ___
 *We use the code from the previous chapter*
 ___
 
+**Tip: Check out the [bonus chapter](bonus/vscode) for a more smooth way to build your game using makelove.**
+___
+
 You made a game, and you want to share it with others. You could make them install LÖVE on their computer, but that is not necessary.
 
 First, we need to change the title and icon. For that we will use a config file.
