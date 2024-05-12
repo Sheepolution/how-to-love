@@ -57,11 +57,5 @@ For more information on building your game, check out the [LÖVE wiki page](http
 
 ___
 
-## Castle
-
-[Castle](https://castle.games/) is a client that allows you to easily share your LÖVE games. Check it out!
-
-___
-
 ## Summary
-With [conf.lua](https://love2d.org/wiki/Config_Files) you can configure things about your game like title and icon. Select all the files in the folder of your game, put them in a zip. Change the file's extension from `.zip` to `.love`. Download [this zip file](https://drive.google.com/file/d/1xX49nDCI0UxjnwY3-h0f-kpdmHVmNqvz/view?usp=sharing), and unzip all the files in a folder. Move your `.love` on top of `build.bat` to create a `.zip`. People will have to unzip all the files in a folder and open the `.exe` to play your game. We can also use Castle which is a client that allows us to share our LÖVE games.
+With [conf.lua](https://love2d.org/wiki/Config_Files) you can configure things about your game like title and icon. Select all the files in the folder of your game, put them in a zip. Change the file's extension from `.zip` to `.love`. Download [this zip file](https://drive.google.com/file/d/1xX49nDCI0UxjnwY3-h0f-kpdmHVmNqvz/view?usp=sharing), and unzip all the files in a folder. Move your `.love` on top of `build.bat` to create a `.zip`. People will have to unzip all the files in a folder and open the `.exe` to play your game.
