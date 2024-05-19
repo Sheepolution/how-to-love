@@ -222,7 +222,7 @@ function love.load()
 end
 ```
 
-This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables `i` tells us the position of the table, `v` is the value of that position in the table. It's basically a shorthand for `fruits[i]`. For example, in the first iteration the values for the variables  `i` would be `1` and `v` would be `"apple"`. In the second iteration, `i` and `v` would be `2` and `"pear"` respectively.
+This for-loop loops, or what we also call *iterates*, through all the values in the table. The variables `i` tells us the position of the table, `v` is the value of that position in the table. It's basically a shorthand for `fruits[i]`. For example, in the first iteration the values for the variables  `i` would be `1` and `v` would be `"tomato"`. In the second iteration, `i` and `v` would be `2` and `"pear"` respectively.
 
 But how does it work? Why does the function `ipairs` allow for this? That is for another time. For now all you need to know is that `ipairs` is basically a shorthand for the following:
 
