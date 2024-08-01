@@ -537,11 +537,6 @@ By increasing the value that we use to increase our y-position we can simulate g
 
 ___
 
-## Survey
-
-Thanks for reading How to LÖVE! I would love to know your opinion on it. Would you be so kind to answer [this short survey](https://forms.gle/EvSpqMc2H5zNNmy36) about you and your experience with this book? Thanks!
-
-
 ## The end?
 
 And with that we're at the end of this chapter, and at the end of this book (for now!). I hope you enjoyed reading all the chapters and of course learned a lot by reading them.  I still have plans for new chapters, but that is for another time. Until then I wish you good luck on your journey to become an even greater game programmer than you already are. I recommend [learn2love](https://rvagamejams.com/learn2love/) if you want to learn more. It goes more in-depth on the topics I covered, and also has chapters on networking.
