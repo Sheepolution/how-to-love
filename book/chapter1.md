@@ -28,7 +28,7 @@ ___
 
 Now we need to install a text editor. We're going to use ZeroBrane Studio in this tutorial.
 
-If you use **Visual Studio Code**, check out the [extra chapter](vscode) to learn how to run LÖVE in Visual Studio Code.
+If you use **Visual Studio Code**, check out the [extra chapter](bonus/vscode) to learn how to run LÖVE in Visual Studio Code.
 
 Go to [studio.zerobrane.com](https://studio.zerobrane.com/), and click on "Download".
 
