@@ -2,7 +2,7 @@
 
 Let's make it so that we can save and load our progress in our game. We do this by writing and reading a file. But first we need to have a game, so let's make a small game where you can pick up coins.
 
-We start with a player that can move
+We start with a player that can move.
 
 ```lua
  function love.load()
@@ -159,11 +159,11 @@ end
 
 ![](/images/book/21/coin_grower.gif)
 
-Now we can move around and pick up coins. Nice! But before we go over to saving and loading, let's make a few more changes.
+Now we can move around and pick up coins. Nice! But before we start saving and loading, let's make a few more changes.
 
-If restart the game a few times you might notice that even though the circles are positioned randomly, they are always on the same random spot.
+If you restart the game a few times you might notice that even though the circles are positioned randomly, they are always on the same random spot.
 
-To fix this we can use `math.randomseed()`. The random numbers you generate are based on a number, which we call the *seed*. And because we don't change the seed you always get the same random positions. The advantage seeds is that they are a key to a certain randomness, which you could save and share. With Minecraft for example, you can share the seed that was used to generate a world, and other people can use it to get the same generated world.
+To fix this we can use `math.randomseed()`. The random numbers you generate are based on a number, which we call the *seed*. And because we don't change the seed you always get the same random positions. The advantage of seeds is that they are a key to a certain randomness, which you could save and share. With Minecraft for example, you can share the seed that was used to generate a world, and other people can use it to get the same generated world.
 
 So what number do we use as our seed? Because if we were to do `math.randomseed(123)`, the game would still have the same number. We need a number that is unique every time we start the game. And for that we can use `os.time()`. This is a Lua function that gives you the time of your operation system to the second. That's 86400 unique numbers a day!
 
