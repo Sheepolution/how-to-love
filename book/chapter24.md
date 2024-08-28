@@ -302,7 +302,7 @@ ___
 
 ## Jumping
 
-Now it's time to make te player able to jump. We make it jump when the up-key is pressed. So first let's the `love.keypressed(key)` callback to `main.lua`, and have it call the function `jump()` of the player, which we will make in a moment.
+Now it's time to make te player able to jump. We make it jump when the up-key is pressed. So first let's add the `love.keypressed(key)` callback to `main.lua`, and have it call the function `jump()` of the player, which we will make in a moment.
 
 
 ```lua
@@ -360,7 +360,7 @@ function Player:jump()
 end
 ```
 
-But right now if we want to do an action as we land, in this case setting `canJump` to `true`, we have to do it in the `Entity` class. Let's add a function that is called upon resolving collision, so that we can override those functions in the `Player` class.
+But right now if we want to do an action as we land, in this case setting `canJump` to `true`, we have to do it in the `Entity` class. Something we could technically do, but this jumping code is for the player specifically. Let's add a function that is called upon resolving collision, so that we can override those functions in the `Player` class.
 
 ```lua
 --! file: entity.lua
