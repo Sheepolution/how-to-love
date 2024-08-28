@@ -379,7 +379,7 @@ Then inside the other files of the classes, we require the shape file, and pass 
 ```lua
 --! file: rectangle.lua
 --We could name our variable anything we want here, but it's nice to keep a consistent name.
-local Shape = require "shape.lua"
+local Shape = require "shape"
 
 --Let's also make rectangle local.
 local Rectangle = Shape:extend()
@@ -407,7 +407,7 @@ function love.load()
 	Object = require "classic"
 	--We no longer need to require shape here.
 
-	local Rectangle require "rectangle"
+	local Rectangle = require "rectangle"
 
 	local Circle = require "circle"
 
@@ -428,7 +428,7 @@ local r1, r2
 function love.load()
 	Object = require "classic"
 
-	local Rectangle require "rectangle"
+	local Rectangle = require "rectangle"
 
 	local Circle = require "circle"
 
