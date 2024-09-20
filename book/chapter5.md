@@ -57,7 +57,7 @@ So now the x-position of our rectangle is the value of `x`.
 
 Note that the variable name `x` is just a name. We could've named it `icecream` or `unicorn` or whatever. Functions don't care about variable names, it only cares about its value.
 
-Now we want to make the rectangle move. We do this in love.update. Every update we want to increase `x` by 5. In other words, `x` needs to be value of `x` + 5. And that's exactly how we write it.
+Now we want to make the rectangle move. We do this in love.update. Every update we want to increase `x` by 5. In other words, `x` needs to be the value of `x` + 5. And that's exactly how we write it.
 
 ```lua
 function love.update()
@@ -83,7 +83,7 @@ For example, let's say that Computer A runs with 100 fps (frames per second), an
 
 200 x 5 = 1000
 
-So in 1 second, x has increased with 500 on computer A, while on computer B x has increased with 1000.
+So in 1 second, `x` has increased with 500 on computer A, while on computer B `x` has increased with 1000.
 
 Luckily, there's a solution for this: delta time.
 
@@ -100,11 +100,11 @@ Delta time is the time that has passed between the previous and the current upda
 
 On computer B, delta time would be 1 / 200, which is 0.005.
 
-So in 1 second, computer A updates 100 times, and increases `x` by 5 x 0.01, and computer B updates 200 times and increases `x` by 5 x 0.005.
+So in 1 second, computer A updates 100 times, and increases `x` by `5 * 0.01`, and computer B updates 200 times and increases `x` by `5 * 0.005`.
 
-100 x 5 * 0.01 = 5
+`100 * 5 * 0.01 = 5`
 
-200 x 5 * 0.005 = 5
+`200 * 5 * 0.005 = 5`
 
 By using delta time our rectangle will move with the same speed on all computers.
 
