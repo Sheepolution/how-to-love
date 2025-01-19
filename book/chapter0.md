@@ -10,7 +10,7 @@ Welcome to How to LÖVE. The tutorial that teaches you how to program games with
 
 This tutorial is for people who want to learn how to program. You don't necessarily need to learn how to program to make a game. If you want to make a single simple game and not touch game development after that again, I recommend using a tool like Construct 2 or Game Maker.
 
-In this tutorial we will be using LÖVE. The reason for this is because LÖVE is very beginner friendly in terms of programming games, but provides the functionality to make professional 2D games. This makes it a great tool for both beginners and experienced users. [Here's a list](https://store.steampowered.com/curator/32659238-L%C3%96VE-Games/) of all the games on Steam that were made with LÖVE.
+In this tutorial we will be using LÖVE. The reason for this is because LÖVE is very beginner friendly in terms of programming games, but provides the functionality to make professional 2D games. This makes it a great tool for both beginners and experienced users. [Here's a list](https://store.steampowered.com/curator/44895761-Made-With-L%25C3%2596VE/) of all the games on Steam that were made with LÖVE.
 
 Unlike Game Maker and Unity, LÖVE is a framework and not an engine. You will have to do everything with code. There is no built in level editor or anything. The plus side to this is that you will understand exactly what is going on and how it works, because you wrote it yourself. Your knowledge is also easier to transfer to other engines and frameworks. Because while every engine works differently, code always works the same.
 
