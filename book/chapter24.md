@@ -302,7 +302,7 @@ ___
 
 ## Jumping
 
-Now it's time to make te player able to jump. We make it jump when the up-key is pressed. So first let's add the `love.keypressed(key)` callback to `main.lua`, and have it call the function `jump()` of the player, which we will make in a moment.
+Now it's time to make the player able to jump. We make it jump when the up-key is pressed. So first let's add the `love.keypressed(key)` callback to `main.lua`, and have it call the function `jump()` of the player, which we will make in a moment.
 
 
 ```lua
@@ -491,8 +491,8 @@ function Entity:resolveCollision(e)
                     self:collide(e, "bottom")
                 end
             else
-                local a = self:checkResolve(e, "bottom")
-                local b = e:checkResolve(self, "top")
+                local a = self:checkResolve(e, "top")
+                local b = e:checkResolve(self, "bottom")
                 if a and b then
                     self:collide(e, "top")
                 end
