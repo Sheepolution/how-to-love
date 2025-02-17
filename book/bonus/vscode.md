@@ -20,7 +20,7 @@ Install the following extensions:
 
 As the marketplace says this extension gives you lots of useful features. We can also make it have LÖVE autocomplete.
 
-Press `Ctrl + Shift + P` and look for and open `Preferences: Open Settings (JSON)`.
+Press `Ctrl + Shift + P` and look for and open `Preferences: Open User Settings (JSON)`.
 
 Add the following settings to the JSON:
 
