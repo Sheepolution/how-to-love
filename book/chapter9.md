@@ -140,9 +140,7 @@ print(hello)
 
 ## When and why locals?
 
-The best practice is to always use local variables, and there are multiple reasons for it. First of all Lua is faster with accessing locals than globals. Now this is a very small difference, perhaps not bigger than 0.000001 seconds, but when you use a lot of globals it quickly adds up.
-
-Another reason is that with globals you're more likely to make mistakes. You might accidentally use the same variable twice at different locations, changing the variable to something at location 1 where it won't make sense to have that value at location 2. If you're going to use a variable only in a certain scope then make it local.
+The best practice is to always use local variables. The main reason for this is that with globals you're more likely to make mistakes. You might accidentally use the same variable twice at different locations, changing the variable to something at location 1 where it won't make sense to have that value at location 2. If you're going to use a variable only in a certain scope then make it local.
 
 In the previous chapter we made a function that creates rectangles. In this function we could have made the variable `rect` local, since we only use it in that function. We still use that rectangle outside the function, but we access it from the table `listOfRectangles` to which we add it.
 
@@ -177,7 +175,7 @@ function love.load()
 end
 ```
 
-So are there moments when it is okay to use globals? People have mixed opinions on this. Some people will tell you never to use globals. I'll tell you that it's fine, especially as a beginner, to use global variables when you need them in multiple files. Similarly to how `love` is a global variable. Just keep in mind that locals are faster.
+So are there moments when it is okay to use globals? People have mixed opinions on this. Some people will tell you never to use globals. I'll tell you that it's fine, especially as a beginner, to use global variables when you need them in multiple files. Preferably these are variables that you don't plan to change after creating them (reassignment). Similarly to how `love` is a global variable that never changes.
 
 Note that throughout this tutorial I use a lot of globals, but this is to make the code smaller and easier to explain.
 
