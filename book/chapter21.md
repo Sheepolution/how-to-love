@@ -5,7 +5,7 @@ Let's make it so that we can save and load our progress in our game. We do this 
 We start with a player that can move.
 
 ```lua
- function love.load()
+function love.load()
  	-- Create a player object with an x, y and size
 	player = {
 		x = 100,
@@ -42,7 +42,7 @@ And for fun, let's give the player a face.
 ![](/images/book/21/face.png)
 
 ```lua
- function love.load()
+function love.load()
  	-- Create a player object with an x, y and size
 	player = {
 		x = 100,
@@ -66,7 +66,7 @@ Next we want to add some coins. We'll have them positioned randomly on screen. A
 ![](/images/book/21/dollar.png)
 
 ```lua
- function love.load()
+function love.load()
 	player = {
 		x = 100,
 		y = 100,
@@ -170,7 +170,7 @@ So what number do we use as our seed? Because if we were to do `math.randomseed(
 But even better might be to use LÖVE's math library. LÖVE's random number generated (rng) is automatically seeded (with os.time()) and overall is better/more random than Lua's rng.
 
 ```lua
- function love.load()
+function love.load()
 	player = {
 		x = 100,
 		y = 100,
@@ -353,7 +353,7 @@ So let's start with checking if our file exists, and if so we read the file. We 
 If a file exists, `love.filesystem.getInfo(filename)` will return a table with information, else it will return `nil`. Since we only want to know if the file exists we can put the function in an if-statement, because we don't need to the information that the table provides.
 
 ```lua
- function love.load()
+function love.load()
 
  	lume = require "lume"
 
@@ -398,7 +398,7 @@ And now we can apply the data to our player and coins. Now how we put this code 
 
 
 ```lua
- function love.load()
+function love.load()
 
  	lume = require "lume"
 
