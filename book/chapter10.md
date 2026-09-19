@@ -16,7 +16,7 @@ function love.load()
 end
 ```
 
-Notice how `require` doesn't have parantheses (). This is because when you only pass 1 argument, you don't have to use them. Now I recommend you still do use them for any other function, but with `require` it's common to leave them out. But in the end, it doesn't even matter.
+Notice how `require` doesn't have parantheses (). This is because when you only pass 1 string literal (or table constructor) as an argument to a function in Lua, you don't have to use them. Now I recommend you still do use them for any other function, but with `require` it's common to leave them out. But in the end, it doesn't even matter.
 
 Next we have to put `tick.update(dt)` in our updater.
 
