@@ -103,7 +103,7 @@ function love.update(dt)
 	end
 end
 
-function love.draw(dt)
+function love.draw()
 	for i,v in ipairs(listOfRectangles) do
 		love.graphics.rectangle("line", v.x, v.y, v.width, v.height)
 	end
